@@ -4,7 +4,26 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :website %>
+    <%= f.input :website , as: :url%>
+    <div class='col-md-12'>
+    <div class='col-md-6'>
+    <label class='form-label'>Categories</label>
+    <%Bot::CATEGORIES.each do |category|%>
+      <div class='checkbox'>
+      <label><%= check_box_tag "bot[categories][]", category, (@bot.categories||[]).include?(category)%> <%=category%></label>
+      </div>
+    <%end%>
+    </div>
+    <div class='col-md-6'>
+    <label class='form-label'>Categories</label>
+    <%Bot::PLATFORMS.each do |platform|%>
+    <div class='checkbox'>
+      <label>
+      <%= check_box_tag "bot[platforms][]", platform, (@bot.platforms||[]).include?(platform)%> <%=platform%>
+      </label></div>
+    <%end%>
+    </div>
+    </div>
     <%= f.input :twitter %>
     <%= f.input :facebook %>
   </div>

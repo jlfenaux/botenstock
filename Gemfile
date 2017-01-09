@@ -29,6 +29,8 @@ gem 'bootstrap-sass'
 gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
+gem "binding_of_caller"
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

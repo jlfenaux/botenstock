@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109180403) do
+ActiveRecord::Schema.define(version: 20170109182455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20170109180403) do
     t.datetime "updated_at",  null: false
     t.string   "categories",               array: true
     t.string   "platforms",                array: true
+    t.string   "permalink"
     t.index "to_tsvector('french'::regconfig, (((name)::text || ' '::text) || description))", name: "bot_search_idx", using: :gin
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
+    t.index ["permalink"], name: "index_bots_on_permalink", using: :btree
     t.index ["platforms"], name: "index_bots_on_platforms", using: :gin
   end
 

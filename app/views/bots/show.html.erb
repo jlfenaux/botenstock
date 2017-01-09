@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -24,6 +23,18 @@
   <strong>Facebook:</strong>
   <%= @bot.facebook %>
 </p>
+<% unless @bot.categories.nil?%>
+<p>
+  <strong>Catégories:</strong>
+  <%= @bot.categories.map{|c| "<span class='label label-default'>#{c}</span>"}.join(' ').html_safe %>
+</p>
+<%end%>
+<% unless @bot.platforms.nil?%>
+<p>
+  <strong>Plateformes:</strong>
+  <%= @bot.platforms.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %>
+</p>
+<%end%>
 
-<%= link_to 'Edit', edit_bot_path(@bot) %> |
-<%= link_to 'Back', bots_path %>
+<%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%> <%= link_to 'Nouveau bot', new_bot_path(), class:'btn btn-default' %>
+<%= link_to 'Retour', bots_path, class:'btn btn-default' %>
