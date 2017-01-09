@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bot.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bot.description %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @bot.website %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @bot.twitter %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @bot.facebook %>
+</p>
+
+<%= link_to 'Edit', edit_bot_path(@bot) %> |
+<%= link_to 'Back', bots_path %>
