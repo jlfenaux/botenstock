@@ -14,7 +14,7 @@ class Bot < ApplicationRecord
     'Actualités',
     'Business',
     'Communication',
-    'Cuisine/Gastronomie'
+    'Cuisine/Gastronomie',
     'Education',
     'Finance',
     'Fun',
