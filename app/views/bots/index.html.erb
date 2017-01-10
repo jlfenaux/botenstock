@@ -18,7 +18,7 @@
             <div class="panel-heading">Plateformes</div>
             <div class="list-group">
               <% Bot::PLATFORMS.each do |platform|%>
-                  <%= link_to platform, bot_directory_path(platform: platform, category: @category), class: 'list-group-item' %>
+                  <%= link_to platform, bot_directory_path(platform: platform, category: @category, language: @language), class: 'list-group-item' %>
               <%end%>
             </div>
           </div>
@@ -26,10 +26,19 @@
             <div class="panel-heading">Catégories</div>
             <div class="list-group">
               <% Bot::CATEGORIES.each do |category|%>
-                  <%= link_to category, bot_directory_path(category: category , platform: @platform), class: 'list-group-item' %>
+                  <%= link_to category, bot_directory_path(category: category , platform: @platform, language: @language), class: 'list-group-item' %>
               <%end%>
             </div>
           </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Langues</div>
+            <div class="list-group">
+              <% Bot::LANGUAGES.each do |language|%>
+                  <%= link_to language, bot_directory_path(category: @category , platform: @platform, language: language), class: 'list-group-item' %>
+              <%end%>
+            </div>
+          </div>
+
         </div>
         <div class="col-md-9">
             <h2><%=@title%></h2>

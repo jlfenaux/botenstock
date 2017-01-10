@@ -5,6 +5,11 @@
 </p>
 
 <p>
+  <strong>Tagline:</strong>
+  <%= @bot.lagline %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @bot.description %>
 </p>
@@ -23,6 +28,15 @@
   <strong>Facebook:</strong>
   <%= @bot.facebook %>
 </p>
+<p>
+  <strong>Product Hunt:</strong>
+  <%= link_to @bot.product_hunt_url %>
+</p>
+<p>
+  <strong>Venture Beat:</strong>
+  <%= link_to @bot.venture_beat_url %>
+</p>
+
 <% unless @bot.categories.nil?%>
 <p>
   <strong>Catégories:</strong>
@@ -33,6 +47,13 @@
 <p>
   <strong>Plateformes:</strong>
   <%= @bot.platforms.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %>
+</p>
+<%end%>
+
+<% unless @bot.languages.nil?%>
+<p>
+  <strong>Langues:</strong>
+  <%= @bot.languages.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %>
 </p>
 <%end%>
 

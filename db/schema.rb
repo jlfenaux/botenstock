@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110072848) do
+ActiveRecord::Schema.define(version: 20170110102718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(version: 20170110072848) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.index "to_tsvector('french'::regconfig, (((name)::text || ' '::text) || description))", name: "bot_search_idx", using: :gin
+    t.string   "tagline"
+    t.string   "product_hunt_url"
+    t.string   "venture_beat_url"
+    t.string   "languages",                      array: true
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree
     t.index ["platforms"], name: "index_bots_on_platforms", using: :gin

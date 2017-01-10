@@ -9,13 +9,16 @@ class BotsController < ApplicationController
     @title = []
     @title <<  params[:platform] if params[:platform] != 'toutes_les_plateformes'
     @title <<  params[:category] if params[:category] != 'toutes_les_catégories'
+    @title <<  params[:language] if params[:language] != 'toutes_les_langues'
     @title = @title.compact.join(' / ')
     @category = params[:category] || 'toutes_les_catégories'
     @platform = params[:platform] || 'toutes_les_plateformes'
+    @language = params[:language] || 'toutes_les_langues'
 
     @bots = Bot.all
     @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless [nil, 'toutes_les_catégories'].include? params[:category]
     @bots = @bots.where(" ? = ANY(platforms)", params[:platform]) unless [nil, 'toutes_les_plateformes'].include? params[:platform]
+    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless [nil, 'toutes_les_langues'].include? params[:language]
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
 
   end
@@ -83,6 +86,6 @@ class BotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bot_params
-      params.require(:bot).permit(:name, :description, :logo, :website, :twitter, :facebook, platforms: [], categories: [])
+      params.require(:bot).permit(:name, :description, :logo, :website, :twitter, :facebook,:tagline, :product_hunt_url, :venture_beat_url, platforms: [], categories: [], languages: [])
     end
 end

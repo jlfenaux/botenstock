@@ -10,7 +10,7 @@ class Bot < ApplicationRecord
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\z/
 
   include PgSearch
-  pg_search_scope :search_for, against: %i(name description)
+  pg_search_scope :search_for, against: %i(name description tagline)
 
   PLATFORMS = ['Amazon_Echo', 'Android', 'Discord', 'Email', 'iMessage', 'iOS', 'Kik', 'Messenger', 'Skype', 'Slack', 'SMS', 'Telegram', 'Twitter', 'Web']
   CATEGORIES = [
@@ -33,6 +33,7 @@ class Bot < ApplicationRecord
     'Utilitaires',
     'Voyage'
   ]
+  LANGUAGES = ['Anglais', 'Français']
   def to_param
     permalink
   end
