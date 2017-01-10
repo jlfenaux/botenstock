@@ -2,12 +2,14 @@
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
-<!--     <div class="row">
+    <div class="row">
         <div class="col-lg-12 well text-center form-inline">
-          <%= search_field_tag 'keywords', "", class:'form-control', style:'width: 50%' %>
-          <%= button_tag "Rechercher", class: "btn btn-primary"%>
+          <%= form_tag bots_path , method: :get do%>
+            <%= search_field_tag 'keywords', params[:keywords], class:'form-control', style:'width: 50%' %>
+            <%= button_tag "Rechercher", class: "btn btn-primary"%>
+          <%end%>
         </div>
-    </div> -->
+    </div>
     <!-- /.row -->
     <div class="row">
         <!-- Sidebar Column -->

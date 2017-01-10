@@ -16,6 +16,7 @@ class BotsController < ApplicationController
     @bots = Bot.all
     @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless [nil, 'toutes_les_catégories'].include? params[:category]
     @bots = @bots.where(" ? = ANY(platforms)", params[:platform]) unless [nil, 'toutes_les_plateformes'].include? params[:platform]
+    @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
 
   end
 

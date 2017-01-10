@@ -9,6 +9,9 @@ class Bot < ApplicationRecord
 
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\z/
 
+  include PgSearch
+  pg_search_scope :search_for, against: %i(name description)
+
   PLATFORMS = ['Amazon_Echo', 'Android', 'Discord', 'Email', 'iMessage', 'iOS', 'Kik', 'Messenger', 'Skype', 'Slack', 'SMS', 'Telegram', 'Twitter', 'Web']
   CATEGORIES = [
     'Actualités',
