@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109182455) do
+ActiveRecord::Schema.define(version: 20170110072848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,15 @@ ActiveRecord::Schema.define(version: 20170109182455) do
     t.string   "website"
     t.string   "twitter"
     t.string   "facebook"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "categories",               array: true
-    t.string   "platforms",                array: true
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "categories",                     array: true
+    t.string   "platforms",                      array: true
     t.string   "permalink"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
     t.index "to_tsvector('french'::regconfig, (((name)::text || ' '::text) || description))", name: "bot_search_idx", using: :gin
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree

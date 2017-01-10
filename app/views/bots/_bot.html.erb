@@ -1,0 +1,17 @@
+<a href="<%= bot_path(bot.permalink)%>">
+  <div class='card panel panel-default col-md-6 row'>
+    <div class='pull-left'>
+      <%= image_tag bot.logo.url(:thumb) , class:'img-rounded', alt: bot.name%>
+    </div>
+    <div>
+      <h4 class="media-heading"><%=link_to bot.name, bot%></h4>
+      <%=bot.description%><br>
+      <% unless bot.categories.nil?%>
+        <%= bot.categories.map{|c| "<span class='label label-default'>#{c}</span>"}.join(' ').html_safe %><br>
+      <%end%>
+      <% unless bot.platforms.nil?%>
+        <%= bot.platforms.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %><br>
+      <%end%>
+      </div>
+  </div>
+</a>

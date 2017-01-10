@@ -82,6 +82,6 @@ class BotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bot_params
-      params.require(:bot).permit(:name, :description, :website, :twitter, :facebook, platforms: [], categories: [])
+      params.require(:bot).permit(:name, :description, :logo, :website, :twitter, :facebook, platforms: [], categories: [])
     end
 end

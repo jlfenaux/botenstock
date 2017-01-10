@@ -32,27 +32,12 @@
         <div class="col-md-9">
             <h2><%=@title%></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
-            <%@bots.each do |bot|%>
-            <%= link_to bot do %>
-              <div class='card panel panel-default col-md-6'>
-                <h4><%=bot.name%></h4>
-                <%=bot.description%><br>
-                 <% unless bot.categories.nil?%>
 
-                <%= bot.categories.map{|c| "<span class='label label-default'>#{c}</span>"}.join(' ').html_safe %>
-              <br>
-              <%end%>
-              <% unless bot.platforms.nil?%>
-                <%= bot.platforms.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %>
-              <br>
-              <%end%>
-                </div>
+            <%= render @bots %>
 
-            <%end%>
-            <%end%>
-            <p class='clearfix'>
+          <div class='row clearfix col-sm-12'>
             <%=link_to 'Nouveau bot', new_bot_path, class: 'btn btn-default btn-xs'%>
-            </p>
+          </div>
         </div>
     </div>
 
