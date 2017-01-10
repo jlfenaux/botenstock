@@ -8,13 +8,13 @@ class BotsController < ApplicationController
 
     @title = []
     @title <<  params[:platform] if params[:platform] != 'toutes_les_plateformes'
-    @title <<  params[:category] if params[:category] != 'toutes_les_categories'
+    @title <<  params[:category] if params[:category] != 'toutes_les_catégories'
     @title = @title.compact.join(' / ')
-    @category = params[:category] || 'toutes_les_categories'
+    @category = params[:category] || 'toutes_les_catégories'
     @platform = params[:platform] || 'toutes_les_plateformes'
 
     @bots = Bot.all
-    @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless [nil, 'toutes_les_categories'].include? params[:category]
+    @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless [nil, 'toutes_les_catégories'].include? params[:category]
     @bots = @bots.where(" ? = ANY(platforms)", params[:platform]) unless [nil, 'toutes_les_plateformes'].include? params[:platform]
 
   end
