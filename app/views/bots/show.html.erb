@@ -57,5 +57,15 @@
 </p>
 <%end%>
 
+<p>
+  <strong>Date de création:</strong>
+  <%= @bot.created_at%>
+</p>
+<p>
+  <strong>Date de dernière mise à jour:</strong>
+  <%= @bot.updated_at%>
+</p>
+
+
 <%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%> <%= link_to 'Nouveau bot', new_bot_path(), class:'btn btn-default' %>
 <%= link_to 'Retour', bots_path, class:'btn btn-default' %>
