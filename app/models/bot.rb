@@ -6,17 +6,26 @@ class Bot < ApplicationRecord
   has_attached_file :logo,
     styles: { medium: "300x300>", thumb: "100x100>" },
     default_url: "/images/:style/botenstock.png"
+
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\z/
 
   PLATFORMS = ['Amazon_Echo', 'Android', 'Discord', 'Email', 'iMessage', 'iOS', 'Kik', 'Messenger', 'Skype', 'Slack', 'SMS', 'Telegram', 'Twitter', 'Web']
   CATEGORIES = [
     'Actualités',
     'Business',
+    'Communication',
     'Education',
     'Finance',
+    'Fun',
     'Jeux',
+    'Paiements',
+    'Personnel',
+    'Productivité',
+    'Réseaux sociaux',
+    'Santé',
     'Shopping',
     'Sport',
+    'Sécurité',
     'Utilitaires',
     'Voyage'
   ]
