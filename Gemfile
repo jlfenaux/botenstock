@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'aws-sdk', '~> 2.3.0'
 gem "paperclip", "~> 5.0.0"
 gem 'pg_search'
-
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri

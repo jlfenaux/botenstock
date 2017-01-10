@@ -1,6 +1,6 @@
 class BotsController < ApplicationController
   before_action :set_bot, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: "kapp", password: "ahotu"
+
   # GET /bots
   # GET /bots.json
   def index
