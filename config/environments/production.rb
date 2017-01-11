@@ -88,8 +88,8 @@ Rails.application.configure do
     storage: :s3,
     s3_credentials: {
       bucket: 'botenstock',
-      access_key_id: '1EE72VKVTS5TH8XM8T02',
-      secret_access_key: "BKP6DLiMzVq/OwODEglvh73WaHUL2v+3DCdLRq+U",
+      access_key_id: 'AKIAJ5YNQRR4UQZY4WWA',
+      secret_access_key: "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",
       s3_region: 'eu-west-1'
     }
   }
