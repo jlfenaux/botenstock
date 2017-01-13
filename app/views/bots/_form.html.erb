@@ -1,47 +1,44 @@
-<%= simple_form_for(@bot) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
+<%= simple_form_for(@bot, html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }) do |f| %>
+    <%= f.error_notification %>
     <%= f.input :name %>
     <%= f.input :tagline %>
     <%= f.input :description %>
-    <%= f.input :website , as: :url%>
-    <label class='form-label'>Langues</label>
-    <%Bot::LANGUAGES.each do |language|%>
-      <div class='checkbox'>
-      <label><%= check_box_tag "bot[languages][]", language, (@bot.languages||[]).include?(language)%> <%=language%></label>
-      </div>
-    <%end%>
-    </div>
+    <%= f.input :website , as: :url, placeholder: 'http://example.com'%>
     <%= f.input :twitter %>
     <%= f.input :facebook %>
     <%= f.input :product_hunt_url , as: :url%>
     <%= f.input :venture_beat_url , as: :url%>
-    <div class='col-md-12'>
-    <div class='col-md-6'>
-    <label class='form-label'>Categories</label>
-    <%Bot::CATEGORIES.each do |category|%>
-      <div class='checkbox'>
-      <label><%= check_box_tag "bot[categories][]", category, (@bot.categories||[]).include?(category)%> <%=category%></label>
-      </div>
-    <%end%>
-    </div>
-    <div class='col-md-6'>
-    <label class='form-label'>Categories</label>
-    <%Bot::PLATFORMS.each do |platform|%>
-    <div class='checkbox'>
-      <label>
-      <%= check_box_tag "bot[platforms][]", platform, (@bot.platforms||[]).include?(platform)%> <%=platform%>
-      </label></div>
-    <%end%>
-    </div>
-    </div>
+    <%= f.input :categories, as: :check_boxes, collection: Bot::CATEGORIES , input_html: { class: 'col-md-4' } %>
+    <%= f.input :languages, as: :check_boxes, collection: Bot::LANGUAGES%>
     <%= f.input :twitter %>
     <%= f.input :facebook %>
     <%= f.input :logo, as: :file %>
-  </div>
+
+
+  <h3>Plateformes</h3>
+    <%= f.input :amazon_echo_url , as: :url, label: 'Amazon Echo', placeholder: 'http://example.com'%>
+    <%= f.input :android_url, as: :url , label: 'Android', placeholder: 'http://example.com'%>
+    <%= f.input :discord_url, as: :url , label: 'Discord', placeholder: 'http://example.com'%>
+    <%= f.input :email_url, as: :url , label: 'Email', placeholder: 'http://example.com'%>
+    <%= f.input :imessage_url, as: :url , label: 'iMessage', placeholder: 'http://example.com'%>
+    <%= f.input :ios_url, as: :url , label: 'iOS', placeholder: 'http://example.com'%>
+    <%= f.input :kik_url, as: :url , label: 'Kik', placeholder: 'http://example.com'%>
+    <%= f.input :messenger_url, as: :url , label: 'Messenger', placeholder: 'http://example.com'%>
+    <%= f.input :skype_url, as: :url , label: 'Skype', placeholder: 'http://example.com'%>
+    <%= f.input :slack_url, as: :url , label: 'Slack', placeholder: 'http://example.com'%>
+    <%= f.input :sms_url, as: :url , label: 'Sms', placeholder: 'http://example.com'%>
+    <%= f.input :telegram_url, as: :url , label: 'Telegram', placeholder: 'http://example.com'%>
+    <%= f.input :twitter_url, as: :url , label: 'Twitter', placeholder: 'http://example.com'%>
+    <%= f.input :web_url, as: :url , label: 'Web', placeholder: 'http://example.com'%>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit , value: 'Enregister', class: 'btn-primary'%>
   </div>
 <% end %>

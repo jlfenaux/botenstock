@@ -2,5 +2,8 @@
 
 <%= render 'form', bot: @bot %>
 
-<%= link_to 'Afficher', @bot %> |
-<%= link_to 'Retour', bots_path %>
+<div class='row col-sm-12'>
+<br>
+<%= link_to 'Afficher', @bot, class:'btn btn-default' %>
+<%= link_to 'Retour', bots_path , class:'btn btn-default'%>
+</div>

@@ -46,7 +46,9 @@
 <% unless @bot.platforms.nil?%>
 <p>
   <strong>Plateformes:</strong>
-  <%= @bot.platforms.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %>
+  <% @bot.platforms.each do |p| %>
+  <%= link_to "<span class='label label-default'>#{p}&nbsp;&nbsp;<span class='glyphicon glyphicon-new-window'></span></span>".html_safe , @bot.platform_url(p), target:'_platform'%>
+  <%end%>
 </p>
 <%end%>
 

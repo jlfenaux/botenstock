@@ -12,3 +12,12 @@
 .card:hover {
   background-color: #ddd;
 }
+
+.bot_categories, .bot_languages {
+  .col-sm-9 {
+    .checkbox {
+     width: 200px;
+     float: left;
+    }
+  }
+}
