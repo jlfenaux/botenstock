@@ -4,8 +4,8 @@
       <%= image_tag bot.logo.url(:thumb) , class:'img-rounded', alt: bot.name%>
     </div>
     <div>
-      <h4 class="media-heading"><%=link_to bot.name, bot%></h4>
-      <%=bot.tagline%><br>
+      <h4 class="media-heading"><%= bot.name%></h4>
+      <div class='tagline'><%=bot.tagline%></div>
       <% unless bot.categories.nil?%>
         <%= bot.categories.map{|c| "<span class='label label-default'>#{c}</span>"}.join(' ').html_safe %><br>
       <%end%>

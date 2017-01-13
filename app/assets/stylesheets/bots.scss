@@ -11,6 +11,7 @@
 }
 .card:hover {
   background-color: #ddd;
+  color: black;
 }
 
 .bot_categories, .bot_languages {
@@ -30,5 +31,6 @@ h4 {
   font-style: italic;
   font-size: 110%;
   color: #555;
+  margin-bottom: 5px
 }
 
