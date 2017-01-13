@@ -18,7 +18,7 @@
             <div class="panel-heading">Plateformes</div>
             <div class="list-group">
               <% Bot::PLATFORMS.each do |platform|%>
-                  <%= link_to platform, bot_directory_path(platform: platform, category: @category, language: @language), class: 'list-group-item' %>
+                  <%= link_to platform.gsub('_', ' '), bot_directory_path(platform: platform, category: @category, language: @language), class: 'list-group-item' %>
               <%end%>
             </div>
           </div>
@@ -41,7 +41,7 @@
 
         </div>
         <div class="col-md-9">
-            <h2><%=@title%></h2>
+            <h2 class='text-primary'><%=@title%></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
 
             <%= render @bots %>
