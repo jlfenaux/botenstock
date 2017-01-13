@@ -3,6 +3,13 @@
     <%= image_tag @bot.logo.url(:medium) %>
     <br>
     <div class="panel panel-default">
+      <div class="panel-heading">Liens</div>
+      <li class='list-group-item'>
+        <%= link_to "Site web officiel".html_safe, @bot.website , target:'offical' %>
+        <span class='glyphicon glyphicon-new-window pull-right'></span>
+      </li>
+    </div>
+    <div class="panel panel-default">
       <div class="panel-heading">Présent sur les plateformes</div>
       <div class='list-group'>
         <% @bot.platforms.each do |p| %>
@@ -30,10 +37,12 @@
           </div>
         </div>
       <%end%>
+
+
   </div>
   <div class='col-md-8'>
     <h1><%= @bot.name %></h1>
-    <%= link_to "Site web officiel&nbsp;<span class='glyphicon glyphicon-new-window'></span>".html_safe, @bot.website , target:'offical' %>
+
     <p class='tagline'><%= @bot.tagline %></p>
     <p><%= @bot.description %></p>
 
