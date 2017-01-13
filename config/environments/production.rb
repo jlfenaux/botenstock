@@ -95,4 +95,14 @@ Rails.application.configure do
     }
   }
 
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp-relay.sendinblue.com",
+    :port => 587,
+    :enable_starttls_auto => true,
+    :domain => "ahotu.com",
+    :authentication => :login,
+    :user_name => "jlfenaux@ahotu.com",
+    :password => "VpYym7OK6hjN04Bw"
+  }
+
 end
