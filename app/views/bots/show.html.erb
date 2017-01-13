@@ -1,73 +1,56 @@
-<%= image_tag @bot.logo.url(:medium) %>
-<p>
-  <strong>Name:</strong>
-  <%= @bot.name %>
-</p>
+<div class='col-md-12'>
+  <div class='col-md-4'>
+    <%= image_tag @bot.logo.url(:medium) %>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">Présent sur les plateformes</div>
+      <div class='list-group'>
+        <% @bot.platforms.each do |p| %>
+          <li class='list-group-item'><%= link_to p, @bot.platform_url(p), target:'_platform'%> <span class='glyphicon glyphicon-new-window pull-right'></span></li>
+        <%end%>
+      </div>
+    </div>
+      <% unless @bot.categories.empty?%>
+        <div class="panel panel-default">
+          <div class="panel-heading">Catégories</div>
+          <div class='list-group'>
+            <%@bot.categories.each do |categorie| %>
+              <li class='list-group-item'><%=categorie%></li>
+            <%end%>
+          </div>
+        </div>
+      <%end%>
+      <% unless @bot.languages.nil?%>
+        <div class="panel panel-default">
+          <div class="panel-heading">Disponible en</div>
+          <div class='list-group'>
+            <%@bot.languages.each do |language| %>
+              <li class='list-group-item'><%=language%></li>
+            <%end%>
+          </div>
+        </div>
+      <%end%>
+  </div>
+  <div class='col-md-8'>
+    <h1><%= @bot.name %></h1>
+    <%= link_to "Site web officiel&nbsp;<span class='glyphicon glyphicon-new-window'></span>".html_safe, @bot.website , target:'offical' %>
+    <p class='tagline'><%= @bot.tagline %></p>
+    <p><%= @bot.description %></p>
 
-<p>
-  <strong>Tagline:</strong>
-  <%= @bot.tagline %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @bot.description %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @bot.website %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @bot.twitter %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @bot.facebook %>
-</p>
-<p>
-  <strong>Product Hunt:</strong>
-  <%= link_to @bot.product_hunt_url %>
-</p>
-<p>
-  <strong>Venture Beat:</strong>
-  <%= link_to @bot.venture_beat_url %>
-</p>
-
-<% unless @bot.categories.nil?%>
-<p>
-  <strong>Catégories:</strong>
-  <%= @bot.categories.map{|c| "<span class='label label-default'>#{c}</span>"}.join(' ').html_safe %>
-</p>
-<%end%>
-<% unless @bot.platforms.nil?%>
-<p>
-  <strong>Plateformes:</strong>
-  <% @bot.platforms.each do |p| %>
-  <%= link_to "<span class='label label-default'>#{p}&nbsp;&nbsp;<span class='glyphicon glyphicon-new-window'></span></span>".html_safe , @bot.platform_url(p), target:'_platform'%>
-  <%end%>
-</p>
-<%end%>
-
-<% unless @bot.languages.nil?%>
-<p>
-  <strong>Langues:</strong>
-  <%= @bot.languages.map{|p| "<span class='label label-default'>#{p}</span>"}.join(' ').html_safe %>
-</p>
-<%end%>
-
-<p>
-  <strong>Date de création:</strong>
-  <%= @bot.created_at%>
-</p>
-<p>
-  <strong>Date de dernière mise à jour:</strong>
-  <%= @bot.updated_at%>
-</p>
+    <p>
+      <strong>Date de création:</strong>
+      <%= @bot.created_at%>
+    </p>
+    <p>
+      <strong>Date de dernière mise à jour:</strong>
+      <%= @bot.updated_at%>
+    </p>
 
 
-<%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%> <%= link_to 'Soumettre un Nouveau Bot', new_bot_path(), class:'btn btn-default' %>
-<%= link_to 'Retour', bots_path, class:'btn btn-default' %>
+    <%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%> <%= link_to 'Soumettre un Nouveau Bot', new_bot_path(), class:'btn btn-default' %>
+    <%= link_to 'Retour', bots_path, class:'btn btn-default' %>
+  </div>
+</div>
+
+
+
