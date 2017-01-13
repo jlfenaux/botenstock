@@ -7,7 +7,7 @@ class BotsController < ApplicationController
 
 
     @title = []
-    @title <<  params[:platform] if params[:platform] != 'toutes_les_plateformes'
+    @title <<  params[:platform].gsub('_', ' ') if params[:platform] && (params[:platform] != 'toutes_les_plateformes')
     @title <<  params[:category] if params[:category] != 'toutes_les_catégories'
     @title <<  params[:language] if params[:language] != 'toutes_les_langues'
     @title = @title.compact.join(' / ')

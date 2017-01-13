@@ -1,4 +1,8 @@
 // import the CSS framework
+$headings-font-family:    Impact, sans-serif;
+$font-family-sans-serif: Tahoma, Geneva, sans-serif;
+$headings-font-weight:    normal;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -44,4 +48,7 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+h4 {
+  font-family: $font-family-sans-serif;
+}
 
