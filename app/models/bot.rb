@@ -26,7 +26,19 @@ class Bot < ApplicationRecord
   include PgSearch
   pg_search_scope :search_for, against: %i(name description tagline)
 
-  PLATFORMS = ['Amazon_Echo', 'Android', 'Discord', 'Email', 'iMessage', 'iOS', 'Kik', 'Messenger', 'Skype', 'Slack', 'SMS', 'Telegram', 'Twitter', 'Web']
+  PLATFORMS = [
+    'Android',
+    'Email',
+    'iMessage',
+    'iOS',
+    'Kik',
+    'Messenger',
+    'Skype',
+    'Slack',
+    'SMS',
+    'Telegram',
+    'Twitter',
+    'Web']
   CATEGORIES = [
     'Actualités',
     'Business',
