@@ -42,8 +42,10 @@ class Bot < ApplicationRecord
   CATEGORIES = [
     'Actualités',
     'Business',
+    'Cinéma',
     'Communication',
     'Cuisine/Gastronomie',
+    'Divertissement',
     'Education',
     'Finance',
     'Fun',
