@@ -23,16 +23,15 @@
     <br>
     <div class="panel panel-default">
       <div class="panel-heading">Liens</div>
-      <li class='list-group-item'>
-        <%= link_to "Site web officiel".html_safe, @bot.website , target:'offical' %>
-        <span class='glyphicon glyphicon-new-window pull-right'></span>
-      </li>
+      <div class='list-group'>
+        <%= link_to "<li class='list-group-item'>Site Web Officiel<span class='glyphicon glyphicon-new-window pull-right'></span></li>".html_safe, @bot.website , target:'offical' %>
+        </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">Présent sur les plateformes</div>
       <div class='list-group'>
         <% @bot.platforms.each do |p| %>
-          <li class='list-group-item'><%= link_to p, @bot.platform_url(p), target:'_platform'%> <span class='glyphicon glyphicon-new-window pull-right'></span></li>
+          <%= link_to "<li class='list-group-item'>#{p}<span class='glyphicon glyphicon-new-window pull-right'></span></li>".html_safe, @bot.platform_url(p), target:'_platform'%>
         <%end%>
       </div>
     </div>
@@ -40,8 +39,8 @@
       <div class="panel panel-default">
         <div class="panel-heading">Catégories</div>
         <div class='list-group'>
-          <%@bot.categories.each do |categorie| %>
-            <li class='list-group-item'><%=categorie%></li>
+          <%@bot.categories.each do |category| %>
+            <%=link_to "<li class='list-group-item'>#{category}</li>".html_safe, bot_directory_path(category: category)%>
           <%end%>
         </div>
       </div>
@@ -51,7 +50,8 @@
         <div class="panel-heading">Disponible en</div>
         <div class='list-group'>
           <%@bot.languages.each do |language| %>
-            <li class='list-group-item'><%=language%></li>
+            <%=link_to "<li class='list-group-item'>#{language}</li>".html_safe, bot_directory_path(language: language)%>
+
           <%end%>
         </div>
       </div>
