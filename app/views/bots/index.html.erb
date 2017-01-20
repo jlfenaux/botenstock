@@ -15,7 +15,7 @@
     <!-- /.row -->
     <div class="col-md-12">
         <!-- Sidebar Column -->
-        <div class="col-md-3">
+        <div class="col-md-2 sidebar">
           <div class="panel panel-primary">
             <div class="panel-heading">Plateformes</div>
             <div class="list-group">
@@ -42,7 +42,7 @@
           </div>
 
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             <h2 class='text-primary'><%=@title%></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
 
@@ -50,6 +50,7 @@
 
           <div class='row clearfix col-sm-12 text-center'>
           <br>
+            <%= will_paginate @bots, class:'apple_pagination' %>
             <%=link_to 'Soumettre un Nouveau Bot', new_bot_path, class: 'btn btn-default'%>
           </div>
         </div>

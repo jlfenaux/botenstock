@@ -20,6 +20,7 @@ class BotsController < ApplicationController
     @bots = @bots.where(" ? = ANY(platforms)", params[:platform]) unless [nil, 'toutes_les_plateformes'].include? params[:platform]
     @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless [nil, 'toutes_les_langues'].include? params[:language]
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
+    @bots = @bots.paginate(:page => params[:page], :per_page => 10)
 
   end
 
