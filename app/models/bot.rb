@@ -46,6 +46,7 @@ class Bot < ApplicationRecord
     'Communication',
     'Cuisine/Gastronomie',
     'Divertissement',
+    'Don/Caritatif',
     'Education',
     'Finance',
     'Fun',
