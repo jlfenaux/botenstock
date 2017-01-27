@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="126px" height="112px" viewBox="0 0 126 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>IMessage</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Platforms" transform="translate(-479.000000, -18.000000)" fill="#FFFFFF">
+            <path d="M479,69.2854035 C479,87.8385329 491.105423,104.091399 509.234514,113.094953 C508.864691,125.004815 500.263877,129.160004 500.263877,129.160004 C500.263877,129.160004 521.03401,127.967275 521.026265,118.65973 C521.026265,118.336377 520.929453,117.972362 520.764872,117.58124 C527.40233,119.513616 534.549022,120.570807 542.001641,120.570807 C576.797955,120.570807 605.003282,97.6088408 605.003282,69.2854035 C605.003282,40.96003 576.797955,18 542.001641,18 C507.207262,18 479,40.96003 479,69.2854035 Z" id="IMessage"></path>
+        </g>
+    </g>
+</svg>
