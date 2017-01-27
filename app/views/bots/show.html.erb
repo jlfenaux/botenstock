@@ -60,7 +60,10 @@
             <div class="panel-heading"><%=I18n.t("bot_page.available_languages")%></div>
             <div class='list-group'>
               <%@bot.languages.each do |language| %>
-                <%=link_to language, bot_directory_path(language: language), class:'list-group-item'%>
+                <%= directory_link I18n.t("language.list.#{language}"),
+                    language: language,
+                    klass: 'list-group-item'
+                %>
 
               <%end%>
             </div>
