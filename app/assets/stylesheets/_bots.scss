@@ -9,7 +9,9 @@
   margin-bottom: 20px;
   padding: 10px;
 }
-
+.no-padding {
+  padding: 0;
+}
 .logos {
   @include inline-flex;
 
@@ -22,7 +24,8 @@
 
 .card {
   padding: 10px;
-  max-height: 150px;
+  // max-height: 150px;
+  min-height: 150px;
   background-color: #fff;
   margin-bottom: 4px;
   img {
