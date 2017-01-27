@@ -1,0 +1,30 @@
+<!-- Sidebar Column -->
+<sidebar class="col-md-3 sidebar">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Plateformes</div>
+    <div class="list-group">
+      <%= link_to "Toutes les plateformes", bot_directory_path(category: @category, language: @language), class: 'list-group-item italic' %>
+      <% Bot::PLATFORMS.each do |platform|%>
+          <%= link_to platform.gsub('_', ' '), bot_directory_path(platform: platform, category: @category, language: @language), class: 'list-group-item' %>
+      <%end%>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Catégories</div>
+    <div class="list-group">
+      <%= link_to "Toutes les catégories", bot_directory_path(platform: @platform, language: @language), class: 'list-group-item italic' %>
+      <% Bot::CATEGORIES.each do |category|%>
+          <%= link_to category, bot_directory_path(category: category , platform: @platform, language: @language), class: 'list-group-item' %>
+      <%end%>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Langues</div>
+    <div class="list-group">
+     <%= link_to "Toutes les langues", bot_directory_path(platform: @platform, category: @category), class: 'list-group-item italic' %>
+      <% Bot::LANGUAGES.each do |language|%>
+          <%= link_to language, bot_directory_path(category: @category , platform: @platform, language: language), class: 'list-group-item' %>
+      <%end%>
+    </div>
+  </div>
+</sidebar>
