@@ -11,6 +11,7 @@ class BotsController < ApplicationController
     @title <<  params[:category] if params[:category] != 'toutes_les_catégories'
     @title <<  params[:language] if params[:language] != 'toutes_les_langues'
     @title = @title.compact.join(' / ')
+    @title = "Tous les bots, sur toutes les plateformes" if @title.blank?
     @category = params[:category] || 'toutes_les_catégories'
     @platform = params[:platform] || 'toutes_les_plateformes'
     @language = params[:language] || 'toutes_les_langues'

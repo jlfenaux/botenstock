@@ -1,16 +1,39 @@
 // Place all the styles related to the bots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.search-box {
+  background-color: $brand-primary;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.logos {
+  @include inline-flex;
+
+  img {
+    height: 30px;
+    margin-right: 10px;
+  }
+  img {
+
+  }
+  padding: 10px;
+}
+
 .card {
   padding: 10px;
   max-height: 150px;
-  // overflow-y: scroll;
+  background-color: #fff;
+  margin-bottom: 4px;
   img {
     margin-right: 10px;
   }
 }
 .card:hover {
-  background-color: #ddd;
+  background-color: $hover-color;
   color: black;
 }
 
@@ -44,9 +67,19 @@ h4 {
 }
 
 .sidebar {
+  .panel {
+    border: none;
+    a {
+      border: none;
+    }
+  }
   .list-group-item {
     font-size: 90%;
-    padding: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  a:hover {
+    background-color: $hover-color;
   }
 
 }
@@ -78,4 +111,13 @@ h4 {
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.index-header {
+  background-color: white;
+  padding: 10px;
 }

@@ -2,9 +2,32 @@
 $headings-font-family:    Impact, sans-serif;
 $font-family-sans-serif: Tahoma, Geneva, sans-serif;
 $headings-font-weight:    normal;
+$brand-primary: #009688;
+$btn-primary-color: white;
+
+$navbar-default-color: #fff;
+$hover-color: #b2dfdb;
+
+$navbar-inverse-bg: $brand-primary;
+$navbar-inverse-border: $brand-primary;
+$navbar-inverse-color: white;
+$navbar-inverse-link-color: white;
+$navbar-inverse-link-hover-color: $hover-color;
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "flex";
+@import "modern-business";
+@import "scaffolds";
+@import "nav";
+@import "bots";
+
+
+
+body {
+  background-color: #eee;
+}
 
 // make all images responsive by default
 img {
@@ -50,5 +73,10 @@ section {
   }
 h4 {
   font-family: $font-family-sans-serif;
+}
+
+.devise {
+  background-color: white;
+  padding-bottom: 20px;
 }
 

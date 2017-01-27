@@ -1,21 +1,12 @@
 
+<%= render 'search_box' %>
+<%= render 'layouts/messages' %>
 <!-- Page Content -->
 <div class="container">
-    <div class="col-sm-12">
-      <%= form_tag bots_path , method: :get, style: 'padding: 10px 100px; margin-bottom: 10px;' do%>
-        <div class='input-group'>
-          <%= search_field_tag 'keywords', params[:keywords], class:'form-control', placeholder: "Rechercher un bot" %>
-          <span class='input-group-btn'>
-            <%= button_tag "Rechercher", class: "btn btn-primary"%>
-          </span>
-        </div>
-      <%end%>
-    </div>
-
     <!-- /.row -->
     <div class="col-md-12">
         <!-- Sidebar Column -->
-        <div class="col-md-3 sidebar">
+        <sidebar class="col-md-3 sidebar">
           <div class="panel panel-primary">
             <div class="panel-heading">Plateformes</div>
             <div class="list-group">
@@ -44,17 +35,19 @@
             </div>
           </div>
 
-        </div>
+        </sidebar>
         <div class="col-md-9">
-            <h2 class='text-primary'><%=@title%></h2>
+          <div class='index-header'>
+            <h1 class='text-primary'><%=@title%></h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
+          </div>
 
             <%= render @bots %>
 
           <div class='row clearfix col-sm-12 text-center'>
           <br>
             <%= will_paginate @bots, class:'apple_pagination' %>
-            <%=link_to 'Soumettre un Nouveau Bot', new_bot_path, class: 'btn btn-default'%>
+            <%=link_to 'Soumettre un Nouveau Bot', new_bot_path, class: 'btn btn-primary'%>
           </div>
         </div>
     </div>

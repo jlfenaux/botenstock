@@ -1,0 +1,18 @@
+<div class="col-sm-12 search-box">
+  <div class="container">
+    <%= form_tag bots_path , method: :get, class: 'col-md-8 col-md-offset-2' do%>
+      <div class='logos'>
+        <%= image_tag 'messenger.svg'%>
+        <%= image_tag 'slack.svg'%>
+        <%= image_tag 'twitter.svg'%>
+
+      </div>
+      <div class='input-group'>
+        <%= search_field_tag 'keywords', params[:keywords], class:'form-control', placeholder: "Rechercher un bot" %>
+        <span class='input-group-btn'>
+          <%= button_tag "Rechercher", class: "btn btn-default"%>
+        </span>
+      </div>
+    <%end%>
+  </div>
+</div>
