@@ -19,22 +19,22 @@
           </p>
 
           <div class='button-bar'>
-            <%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%>
-            <%= link_to 'Soumettre un Nouveau Bot', new_bot_path(), class:'btn btn-default' %>
-            <%= link_to 'Retour', bots_path, class:'btn btn-default' %>
+            <%= link_to I18n.t('edit'), edit_bot_path(@bot) , class:'btn btn-default'%>
+            <%= link_to I18n.t('add_bot'), new_bot_path(), class:'btn btn-default' %>
+            <%= link_to I18n.t('return'), bots_path, class:'btn btn-default' %>
           </div>
 
       </div>
       <sidebar class='col-md-4 sidebar'>
         <%= image_tag @bot.logo.url(:medium), class:'logo'%>
         <div class="panel panel-primary">
-          <div class="panel-heading">Liens</div>
+          <div class="panel-heading"><%=I18n.t("bot_page.links")%></div>
           <div class='list-group'>
-            <%= link_to "Site Web Officiel<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, @bot.website , target:'offical', class:'list-group-item' %>
+            <%= link_to "#{I18n.t("bot_page.official_website")}<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, @bot.website , target:'offical', class:'list-group-item' %>
             </div>
         </div>
         <div class="panel panel-primary">
-          <div class="panel-heading">Présent sur les plateformes</div>
+          <div class="panel-heading"><%=I18n.t("bot_page.present_on_platforms")%></div>
           <div class='list-group'>
             <% @bot.platforms.each do |p| %>
               <%= link_to "#{p}<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, @bot.platform_url(p), target:'_platform', class:'list-group-item'%>
@@ -43,17 +43,21 @@
         </div>
         <% unless @bot.categories.empty?%>
           <div class="panel panel-primary">
-            <div class="panel-heading">Catégories</div>
+            <div class="panel-heading"><%=I18n.t("category", count:2).titlecase%></div>
             <div class='list-group'>
               <%@bot.categories.each do |category| %>
-                <%=link_to category, bot_directory_path(category: category), class:'list-group-item'%>
+                <%= directory_link I18n.t("category.list.#{category}"),
+                    category: category,
+                    klass: 'list-group-item'
+                %>
+
               <%end%>
             </div>
           </div>
         <%end%>
         <% unless @bot.languages.nil?%>
           <div class="panel panel-primary">
-            <div class="panel-heading">Disponible en</div>
+            <div class="panel-heading"><%=I18n.t("bot_page.available_languages")%></div>
             <div class='list-group'>
               <%@bot.languages.each do |language| %>
                 <%=link_to language, bot_directory_path(language: language), class:'list-group-item'%>

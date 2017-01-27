@@ -4,20 +4,19 @@ class BotsController < ApplicationController
   # GET /bots
   # GET /bots.json
   def index
-
+    @category = get_category
+    @platform = get_platform
+    @language = get_language
 
     @title = []
-    @title <<  params[:platform].gsub('_', ' ') if params[:platform] && (params[:platform] != 'toutes_les_plateformes')
-    @title <<  params[:category] if params[:category] != 'toutes_les_catégories'
-    @title <<  params[:language] if params[:language] != 'toutes_les_langues'
-    @title = @title.compact.join(' / ')
-    @title = "Tous les bots, sur toutes les plateformes" if @title.blank?
-    @category = params[:category] || 'toutes_les_catégories'
-    @platform = params[:platform] || 'toutes_les_plateformes'
-    @language = params[:language] || 'toutes_les_langues'
+    @title <<  I18n.t("category.list.#{@category}") unless @category == :all
+    @title <<  @platform unless @platform == :all
+    @title <<  I18n.t("language.list.#{@language}") unless @language == :all
+
+    @title = @title.empty? ? I18n.t('default_title') : @title.compact.join(' / ')
 
     @bots = Bot.all
-    @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless [nil, 'toutes_les_catégories'].include? params[:category]
+    @bots = @bots.where(" ? = ANY(categories)", @category) unless [nil, :all].include? @category
     @bots = @bots.where(" ? = ANY(platforms)", params[:platform]) unless [nil, 'toutes_les_plateformes'].include? params[:platform]
     @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless [nil, 'toutes_les_langues'].include? params[:language]
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
@@ -89,5 +88,21 @@ class BotsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bot_params
       params.require(:bot).permit(:name, :description, :logo, :website, :twitter, :facebook, :tagline, :product_hunt_url, :venture_beat_url, :amazon_echo_url, :android_url, :discord_url, :email_url, :imessage_url, :ios_url, :kik_url, :messenger_url, :skype_url, :slack_url, :sms_url, :telegram_url, :twitter_url, :web_url, platforms: [], categories: [], languages: [])
+    end
+
+    def get_category
+      return :all if params[:category].blank?
+      return :all if params[:category] == I18n.t('category.all_slug', locale: I18n.locale)
+      I18n.t('category.list', locale: I18n.locale).invert[params[:category]]
+    end
+    def get_platform
+      return :all if params[:platform].blank?
+      return :all if params[:platform] == I18n.t('platform.all_slug', locale: I18n.locale)
+      params[:platform]
+    end
+    def get_language
+      return :all if params[:language].blank?
+      return :all if params[:language] == I18n.t('language.all_slug', locale: I18n.locale)
+      I18n.t('language.list', locale: I18n.locale).invert[params[:language]]
     end
 end

@@ -1,6 +1,61 @@
 ---
 fr:
-  en:
+  routes:
+    bots: bots
+  default_title: Tous les bots, sur toutes les plateformes
+  add_bot: Add a new bot
+  return: Return
+  edit: Edit
+
+  search: Rechercher
+  search_placeholder: Rechercher...
+  language:
+    one: langue
+    other: langues
+    all: Toutes les langues
+    all_slug: toutes_les_langues
+    list:
+      Anglais: Anglais
+      Français: Français
+  platform:
+    one: platforme
+    other: platformes
+    all: Toutes les platformes
+    all_slug: toutes_les_plateformes
+  category:
+    one: catégorie
+    other: catégories
+    all: Toutes les catégories
+    all_slug: toutes_les_categories
+    list:
+      Actualités: Actualités
+      Business: Business
+      Cinéma: Cinéma
+      Communication: Communication
+      Cuisine/Gastronomie: Cuisine/Gastronomie
+      Divertissement: Divertissement
+      Don/Caritatif: Don/Caritatif
+      Education: Education
+      Finance: Finance
+      Fun: Fun
+      Jeux: Jeux
+      Marque: Marque
+      Paiements: Paiements
+      Personnel: Personnel
+      Productivité: Productivité
+      Réseaux sociaux: Réseaux sociaux
+      Santé: Santé
+      Shopping: Shopping
+      Sport: Sport
+      Sécurité: Sécurité
+      Utilitaires: Utilitaires
+      Voyage: Voyage
+  bot_page:
+    links: Liens
+    present_on_platforms: Présent sur les plateformes
+    available_languages: Disponible en
+    official_website: Site web Officiel
+
   will_paginate:
     previous_label: "&#8592; "
     next_label: " &#8594;"

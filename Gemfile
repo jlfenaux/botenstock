@@ -18,6 +18,7 @@ gem 'pg_search'
 gem 'devise'
 gem "validate_url"
 gem 'will_paginate', '~> 3.1.0'
+gem 'route_translator'
 
 group :development, :test do
   gem 'byebug', platform: :mri

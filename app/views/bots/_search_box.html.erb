@@ -10,9 +10,9 @@
 
       </div>
       <div class='input-group'>
-        <%= search_field_tag 'keywords', params[:keywords], class:'form-control', placeholder: "Rechercher un bot" %>
+        <%= search_field_tag 'keywords', params[:keywords], class:'form-control', placeholder: I18n.t('search_placeholder') %>
         <span class='input-group-btn'>
-          <%= button_tag "Rechercher", class: "btn btn-secondary"%>
+          <%= button_tag I18n.t('search'), class: "btn btn-secondary"%>
         </span>
       </div>
     <%end%>

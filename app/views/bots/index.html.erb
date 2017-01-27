@@ -9,6 +9,8 @@
         <div class="col-md-9 no-padding">
           <div class='index-header'>
             <h1><%=@title%></h1>
+            <%=debug @category%>
+            <%=debug @platform%><%=debug @language%>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
           </div>
 
@@ -17,7 +19,7 @@
           <div class='row clearfix col-sm-12 text-center'>
           <br>
             <%= will_paginate @bots, class:'apple_pagination' %>
-            <%=link_to 'Soumettre un Nouveau Bot', new_bot_path, class: 'btn btn-primary'%>
+            <%=link_to I18n.t('add_bot'), new_bot_path, class: 'btn btn-primary'%>
           </div>
         </div>
     </div>

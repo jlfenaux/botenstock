@@ -20,4 +20,57 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  routes:
+    bots: "bots"
+  default_title: All bots on all platforms
+  add_bot: Add a new bot
+  return: Return
+  edit: Edit
+  search: Search
+  search_placeholder: Search for...
+  language:
+    one: language
+    other: languages
+    all: All languages
+    all_slug: all_languages
+    list:
+      Anglais: English
+      Français: French
+  platform:
+    one: platform
+    other: platforms
+    all: All platforms
+    all_slug: all_platforms
+  category:
+    one: category
+    other: categories
+    all: All categories
+    all_slug: all_categories
+    list:
+      Actualités: News
+      Business: Business
+      Cinéma: Movies
+      Communication: Communication
+      Cuisine/Gastronomie: Food / Cooking
+      Divertissement: Entertainment
+      Don/Caritatif: Charity
+      Education: Education
+      Finance: Finance
+      Fun: Fun
+      Jeux: Games
+      Marque: Brands
+      Paiements: Payements
+      Personnel: Personal
+      Productivité: Productivity
+      Réseaux sociaux: Social Networks
+      Santé: Health
+      Shopping: Shopping
+      Sport: Sport
+      Sécurité: Security
+      Utilitaires: Utilities
+      Voyage: Travel
+  bot_page:
+    links: Links
+    present_on_platforms: Present on platforms
+    available_languages: Available in
+    official_website: Official website
