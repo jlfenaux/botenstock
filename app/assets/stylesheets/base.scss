@@ -5,6 +5,8 @@ $headings-font-weight:    normal;
 // $brand-primary: #009688; //TEAL
 $brand-primary: #3B5998; // Facebook blue
 $btn-primary-color: white;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
 $brand-secondary: #ffc107;
 
 $navbar-default-color: #fff;
@@ -88,3 +90,6 @@ h4 {
   padding-bottom: 20px;
 }
 
+.btn-primary:visited {
+  color: white;
+}
