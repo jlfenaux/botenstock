@@ -51,6 +51,7 @@ class Bot < ApplicationRecord
     'Finance',
     'Fun',
     'Jeux',
+    'Marque',
     'Paiements',
     'Personnel',
     'Productivité',
