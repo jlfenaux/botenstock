@@ -4,15 +4,17 @@ $font-family-sans-serif: Tahoma, Geneva, sans-serif;
 $headings-font-weight:    normal;
 $brand-primary: #009688;
 $btn-primary-color: white;
+$brand-secondary: #ffc107;
 
 $navbar-default-color: #fff;
 $hover-color: #b2dfdb;
+$hover-color: #fff8e1;
 
 $navbar-inverse-bg: $brand-primary;
 $navbar-inverse-border: $brand-primary;
 $navbar-inverse-color: white;
 $navbar-inverse-link-color: white;
-$navbar-inverse-link-hover-color: $hover-color;
+$navbar-inverse-link-hover-color: $brand-secondary;
 
 
 @import "bootstrap-sprockets";
@@ -20,7 +22,6 @@ $navbar-inverse-link-hover-color: $hover-color;
 @import "flex";
 @import "modern-business";
 @import "scaffolds";
-@import "nav";
 @import "bots";
 
 
@@ -67,10 +68,16 @@ main {
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
+
 section {
   @extend .row;
   margin-top: 20px;
   }
+
+h1 {
+  color: $gray-darker;
+}
+
 h4 {
   font-family: $font-family-sans-serif;
 }

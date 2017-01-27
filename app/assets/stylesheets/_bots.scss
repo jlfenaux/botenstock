@@ -17,9 +17,6 @@
     height: 30px;
     margin-right: 10px;
   }
-  img {
-
-  }
   padding: 10px;
 }
 
@@ -65,13 +62,31 @@ h4 {
     }
   }
 }
-
+.logo {
+  margin-bottom: 20px;
+}
+.button-bar {
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.bot-presentation {
+  background-color: white;
+  padding-bottom: 40px;
+}
 .sidebar {
   .panel {
     border: none;
     a {
       border: none;
     }
+    .panel-heading {
+      font-weight: bold;
+      // color: $brand-secondary;
+    }
+  }
+  a {
+    cursor: hand;
   }
   .list-group-item {
     font-size: 90%;
@@ -120,4 +135,13 @@ h4 {
 .index-header {
   background-color: white;
   padding: 10px;
+  margin-bottom: 10px;
+}
+
+.label-default{
+  background-color: $brand-primary;
+}
+
+.btn-secondary {
+  background-color: $brand-secondary;
 }

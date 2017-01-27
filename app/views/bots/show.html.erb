@@ -1,63 +1,69 @@
-<div class='col-md-12'>
-  <div class='col-md-8'>
-    <h1><%= @bot.name %></h1>
+<%= render 'layouts/messages' %>
+<!-- Page Content -->
+<div class="container">
 
-    <p class='tagline'><%= @bot.tagline %></p>
-    <p><%= @bot.description %></p>
+    <div class='col-md-12'>
+      <div class='col-md-8 bot-presentation'>
+          <h1><%= @bot.name %></h1>
 
-    <p>
-      <strong>Date de création:</strong>
-      <%= @bot.created_at%>
-    </p>
-    <p>
-      <strong>Date de dernière mise à jour:</strong>
-      <%= @bot.updated_at%>
-    </p>
+          <p class='tagline'><%= @bot.tagline %></p>
+          <p><%= @bot.description %></p>
 
+          <p>
+            <strong>Date de création:</strong>
+            <%= @bot.created_at%>
+          </p>
+          <p>
+            <strong>Date de dernière mise à jour:</strong>
+            <%= @bot.updated_at%>
+          </p>
 
-    <%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%> <%= link_to 'Soumettre un Nouveau Bot', new_bot_path(), class:'btn btn-default' %>
-    <%= link_to 'Retour', bots_path, class:'btn btn-default' %>
-  </div>
-  <div class='col-md-4'>
-    <%= image_tag @bot.logo.url(:medium) %>
-    <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">Liens</div>
-      <div class='list-group'>
-        <%= link_to "<li class='list-group-item'>Site Web Officiel<span class='glyphicon glyphicon-new-window pull-right'></span></li>".html_safe, @bot.website , target:'offical' %>
+          <div class='button-bar'>
+            <%= link_to 'Editer', edit_bot_path(@bot) , class:'btn btn-default'%>
+            <%= link_to 'Soumettre un Nouveau Bot', new_bot_path(), class:'btn btn-default' %>
+            <%= link_to 'Retour', bots_path, class:'btn btn-default' %>
+          </div>
+
+      </div>
+      <sidebar class='col-md-4 sidebar'>
+        <%= image_tag @bot.logo.url(:medium), class:'logo'%>
+        <div class="panel panel-primary">
+          <div class="panel-heading">Liens</div>
+          <div class='list-group'>
+            <%= link_to "Site Web Officiel<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, @bot.website , target:'offical', class:'list-group-item' %>
+            </div>
         </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">Présent sur les plateformes</div>
-      <div class='list-group'>
-        <% @bot.platforms.each do |p| %>
-          <%= link_to "<li class='list-group-item'>#{p}<span class='glyphicon glyphicon-new-window pull-right'></span></li>".html_safe, @bot.platform_url(p), target:'_platform'%>
+        <div class="panel panel-primary">
+          <div class="panel-heading">Présent sur les plateformes</div>
+          <div class='list-group'>
+            <% @bot.platforms.each do |p| %>
+              <%= link_to "#{p}<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, @bot.platform_url(p), target:'_platform', class:'list-group-item'%>
+            <%end%>
+          </div>
+        </div>
+        <% unless @bot.categories.empty?%>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Catégories</div>
+            <div class='list-group'>
+              <%@bot.categories.each do |category| %>
+                <%=link_to category, bot_directory_path(category: category), class:'list-group-item'%>
+              <%end%>
+            </div>
+          </div>
         <%end%>
-      </div>
+        <% unless @bot.languages.nil?%>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Disponible en</div>
+            <div class='list-group'>
+              <%@bot.languages.each do |language| %>
+                <%=link_to language, bot_directory_path(language: language), class:'list-group-item'%>
+
+              <%end%>
+            </div>
+          </div>
+        <%end%>
+      </sidebar>
     </div>
-    <% unless @bot.categories.empty?%>
-      <div class="panel panel-default">
-        <div class="panel-heading">Catégories</div>
-        <div class='list-group'>
-          <%@bot.categories.each do |category| %>
-            <%=link_to "<li class='list-group-item'>#{category}</li>".html_safe, bot_directory_path(category: category)%>
-          <%end%>
-        </div>
-      </div>
-    <%end%>
-    <% unless @bot.languages.nil?%>
-      <div class="panel panel-default">
-        <div class="panel-heading">Disponible en</div>
-        <div class='list-group'>
-          <%@bot.languages.each do |language| %>
-            <%=link_to "<li class='list-group-item'>#{language}</li>".html_safe, bot_directory_path(language: language)%>
-
-          <%end%>
-        </div>
-      </div>
-    <%end%>
-  </div>
 </div>
-
 
 

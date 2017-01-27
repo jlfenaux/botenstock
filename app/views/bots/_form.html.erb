@@ -1,4 +1,5 @@
-<%= simple_form_for(@bot, html: { class: 'form-horizontal' },
+
+<%= simple_form_for(@bot, html: { class: 'form-horizontal ' },
   wrapper: :horizontal_form,
   wrapper_mappings: {
     check_boxes: :horizontal_radio_and_checkboxes,
@@ -6,6 +7,14 @@
     file: :horizontal_file_input,
     boolean: :horizontal_boolean
   }) do |f| %>
+
+      <div class="button-bar">
+        <%= f.button :submit , value: 'Enregister', class: 'btn-primary'%>
+        <%= link_to( 'Afficher', @bot, class:'btn btn-default' ) if @bot.persisted?%>
+        <%= link_to 'Retour', bots_path , class:'btn btn-default'%>
+      </div>
+
+
     <%= f.error_notification %>
     <%= f.input :name %>
     <%= f.input :tagline %>
@@ -38,7 +47,9 @@
     <%= f.input :twitter_url, as: :url , label: 'Twitter', placeholder: 'http://example.com'%>
     <%= f.input :web_url, as: :url , label: 'Web', placeholder: 'http://example.com'%>
 
-  <div class="form-actions">
+  <div class="button-bar">
     <%= f.button :submit , value: 'Enregister', class: 'btn-primary'%>
+    <%= link_to( 'Afficher', @bot, class:'btn btn-default' ) if @bot.persisted?%>
+    <%= link_to 'Retour', bots_path , class:'btn btn-default'%>
   </div>
 <% end %>
