@@ -20,12 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  simple_form:
+    labels:
+      bot:
+        name: Name
+        tagline_fr: in French
+        tagline_en: in English
+        description_fr: in French
+        description_en: in English
+        website: Website
+        product_hunt_url: Product Hunt url
+        venture_beat_url: Venture Beat url
+        categories: Categories
+        languages: Languages
+        platforms: Platforms
+
   routes:
     bots: "bots"
   default_title: All bots on all platforms
   add_bot: Add a new bot
   return: Return
   edit: Edit
+  save: Save
+  show: Show
   search: Search
   search_placeholder: Search for...
   language:

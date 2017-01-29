@@ -1,12 +1,28 @@
 ---
 fr:
+  simple_form:
+    labels:
+      bot:
+        name: Nom
+        tagline_fr: En français
+        tagline_en: En anglais
+        description_fr: En français
+        description_en: En anglais
+        website: Site web
+        product_hunt_url: Url Product Hunt
+        venture_beat_url: Url Venture Beat
+        categories: Catégories
+        languages: Langues
+        platforms: Plateformes
+
   routes:
     bots: bots
   default_title: Tous les bots, sur toutes les plateformes
   add_bot: Soumettre un bot
   return: Retour
   edit: Editer
-
+  save: Enregistrer
+  show: Afficher
   search: Rechercher
   search_placeholder: Rechercher...
   language:

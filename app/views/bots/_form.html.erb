@@ -8,11 +8,7 @@
     boolean: :horizontal_boolean
   }) do |f| %>
 
-      <div class="button-bar">
-        <%= f.button :submit , value: 'Enregister', class: 'btn-primary'%>
-        <%= link_to( 'Afficher', @bot, class:'btn btn-default' ) if @bot.persisted?%>
-        <%= link_to 'Retour', bots_path , class:'btn btn-default'%>
-      </div>
+    <%= render 'button_bar', f: f  %>
 
 
     <%= f.error_notification %>
@@ -41,7 +37,7 @@
     <%= f.input :facebook %>
     <%= f.input :logo, as: :file %>
 
-  <h3>Plateformes</h3>
+  <h3><%=I18n.t('simple_form.labels.bot.platforms')%></h3>
     <%= f.input :amazon_echo_url , as: :url, label: 'Amazon Echo', placeholder: 'http://example.com'%>
     <%= f.input :android_url, as: :url , label: 'Android', placeholder: 'http://example.com'%>
     <%#= f.input :discord_url, as: :url , label: 'Discord', placeholder: 'http://example.com'%>
@@ -57,9 +53,5 @@
     <%= f.input :twitter_url, as: :url , label: 'Twitter', placeholder: 'http://example.com'%>
     <%= f.input :web_url, as: :url , label: 'Web', placeholder: 'http://example.com'%>
 
-  <div class="button-bar">
-    <%= f.button :submit , value: 'Enregister', class: 'btn-primary'%>
-    <%= link_to( 'Afficher', @bot, class:'btn btn-default' ) if @bot.persisted?%>
-    <%= link_to 'Retour', bots_path , class:'btn btn-default'%>
-  </div>
+    <%= render 'button_bar', f: f %>
 <% end %>
