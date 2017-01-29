@@ -102,6 +102,7 @@ fr:
         sign_in: Connexion
         sign_in_with_provider: Connexion avec %{provider}
         sign_up: Inscription
+        sign_out: Déconnexion
     unlocks:
       new:
         resend_unlock_instructions: Renvoyer les instructions de déblocage
