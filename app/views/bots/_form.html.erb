@@ -26,8 +26,17 @@
     <%= f.input :website , as: :url, placeholder: 'http://example.com'%>
     <%= f.input :product_hunt_url , as: :url, placeholder: 'http://example.com'%>
     <%= f.input :venture_beat_url , as: :url, placeholder: 'http://example.com'%>
-    <%= f.input :categories, as: :check_boxes, collection: Bot::CATEGORIES , input_html: { class: 'col-md-4' } %>
-    <%= f.input :languages, as: :check_boxes, collection: Bot::LANGUAGES%>
+    <%= f.input :categories,
+        as: :check_boxes,
+        collection: Bot::CATEGORIES ,
+        label_method: ->(obj){ t("category.list.#{obj}") },
+        input_html: { class: 'col-md-4' }
+    %>
+    <%= f.input :languages,
+        as: :check_boxes,
+        collection: Bot::LANGUAGES,
+        label_method: ->(obj){ t("language.list.#{obj}") }
+    %>
     <%= f.input :twitter %>
     <%= f.input :facebook %>
     <%= f.input :logo, as: :file %>
