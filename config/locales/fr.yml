@@ -3,9 +3,9 @@ fr:
   routes:
     bots: bots
   default_title: Tous les bots, sur toutes les plateformes
-  add_bot: Add a new bot
-  return: Return
-  edit: Edit
+  add_bot: Soumettre un bot
+  return: Retour
+  edit: Editer
 
   search: Rechercher
   search_placeholder: Rechercher...

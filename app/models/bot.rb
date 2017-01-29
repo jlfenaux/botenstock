@@ -24,7 +24,7 @@ class Bot < ApplicationRecord
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\z/
 
   include PgSearch
-  pg_search_scope :search_for, against: %i(name description tagline)
+  pg_search_scope :search_for, against: %i(name description_en tagline_en description_fr tagline_fr)
 
   PLATFORMS = [
     'Android',
@@ -70,6 +70,14 @@ class Bot < ApplicationRecord
 
   def platform_url(platform)
     send("#{platform.downcase}_url")
+  end
+
+  def tagline
+    send("tagline_#{I18n.locale}")
+  end
+
+  def description
+    send("description_#{I18n.locale}")
   end
 
   private

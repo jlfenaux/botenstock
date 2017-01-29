@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113140714) do
+ActiveRecord::Schema.define(version: 20170129165706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bots", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
+    t.text     "description_fr"
     t.string   "website"
     t.string   "twitter"
     t.string   "facebook"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170113140714) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.string   "tagline"
+    t.string   "tagline_fr"
     t.string   "product_hunt_url"
     t.string   "venture_beat_url"
     t.string   "languages",                      array: true
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20170113140714) do
     t.string   "telegram_url"
     t.string   "twitter_url"
     t.string   "web_url"
+    t.string   "tagline_en"
+    t.text     "description_en"
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree
     t.index ["platforms"], name: "index_bots_on_platforms", using: :gin
