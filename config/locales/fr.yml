@@ -77,9 +77,8 @@ fr:
       Utilitaires: Utilitaires
       Voyage: Voyage
   bot_page:
-    links: Liens
-    present_on_platforms: Présent sur les plateformes
-    available_languages: Disponible en
+    links: En savoir plus
+    present_on_platforms: Je le veux tout de suite !
     official_website: Site web Officiel
 
   will_paginate:

@@ -6,7 +6,7 @@ class Provider < ApplicationRecord
 
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\z/
 
-  scope :visible, -> {where(visible: true)}
+  scope :visible, -> {where(visible: true).where('icon_content_type is not null')}
 
   def description
     send("description_#{I18n.locale}")

@@ -14,13 +14,26 @@
 }
 .logos {
   @include inline-flex;
-
   img {
     height: 30px;
     margin-right: 10px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
   }
+  a:hover {
+    img {
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
+
+    }
+    background-color: white;
+  }
+
   padding: 10px;
 }
+
 
 .card {
   padding: 10px;
