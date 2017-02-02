@@ -10,7 +10,7 @@
         <%= bot.categories.map{|c| "<span class='label label-default'>#{I18n.t("category.list.#{c}")}</span>"}.join(' ').html_safe %><br>
       <%end%>
       <% unless bot.platforms.empty?%>
-        <%= bot.platforms.map{|p| "<span class='label label-default'>#{p.provider.name}</span>"}.join(' ').html_safe %><br>
+        <%= bot.platforms.visible.map{|p| "<span class='label label-default'>#{p.provider.name}</span>"}.join(' ').html_safe %><br>
       <%end%>
       </div>
   </div>

@@ -8,7 +8,7 @@
           language: @language,
           klass: 'list-group-item italic'
       %>
-      <% Provider.all.each do |platform|%>
+      <% Provider.visible.each do |platform|%>
         <%= directory_link platform.name,
             platform: platform,
             language: @language,

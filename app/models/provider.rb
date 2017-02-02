@@ -6,7 +6,11 @@ class Provider < ApplicationRecord
 
   validates_attachment_content_type :icon, content_type: /\Aimage\/.*\z/
 
+  scope :visible, -> {where(visible: true)}
+
   def description
     send("description_#{I18n.locale}")
   end
+
+  scope :no_tags, -> {where("tag_ids= '{}'")}
 end
