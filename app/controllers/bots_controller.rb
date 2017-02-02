@@ -10,17 +10,19 @@ class BotsController < ApplicationController
 
     @title = []
     @title <<  I18n.t("category.list.#{@category}") unless @category == :all
-    @title <<  @platform unless @platform == :all
+    @title <<  @platform.name unless @platform == :all
     @title <<  I18n.t("language.list.#{@language}") unless @language == :all
 
     @title = @title.empty? ? I18n.t('default_title') : @title.compact.join(' / ')
 
     @bots = Bot.all
     @bots = @bots.where(" ? = ANY(categories)", @category) unless [nil, :all].include? @category
-    @bots = @bots.where(" ? = ANY(platforms)", params[:platform]) unless [nil, 'toutes_les_plateformes'].include? params[:platform]
-    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless [nil, 'toutes_les_langues'].include? params[:language]
+    @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", @platform.id) unless @platform == :all
+    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless [nil, :all].include? @language
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
+    @bots = @bots.includes(platforms: :provider)
     @bots = @bots.paginate(:page => params[:page], :per_page => 10)
+
 
   end
 
@@ -36,6 +38,11 @@ class BotsController < ApplicationController
 
   # GET /bots/1/edit
   def edit
+    Provider.all.each do |provider|
+      unless @bot.platforms.map(&:provider_id).include? provider.id
+        @bot.platforms << Platform.new(provider_id: provider.id)
+      end
+    end
   end
 
   # POST /bots
@@ -82,12 +89,12 @@ class BotsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bot
       # @bot = Bot.find(params[:id])
-      @bot = Bot.where(permalink: params[:id]).first
+      @bot = Bot.where(permalink: params[:id]).includes(platforms: :provider).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bot_params
-      params.require(:bot).permit(:name, :description_fr, :description_en, :logo, :website, :twitter, :facebook, :tagline_en, :tagline_fr, :product_hunt_url, :venture_beat_url, :amazon_echo_url, :android_url, :discord_url, :email_url, :imessage_url, :ios_url, :kik_url, :messenger_url, :skype_url, :slack_url, :sms_url, :telegram_url, :twitter_url, :web_url, platforms: [], categories: [], languages: [])
+      params.require(:bot).permit(:name, :description_fr, :description_en, :logo, :website, :twitter, :facebook, :tagline_en, :tagline_fr, :product_hunt_url, :venture_beat_url, :amazon_echo_url, :android_url, :discord_url, :email_url, :imessage_url, :ios_url, :kik_url, :messenger_url, :skype_url, :slack_url, :sms_url, :telegram_url, :twitter_url, :web_url, categories: [], languages: [], platforms_attributes: [:url, :id])
     end
 
     def get_category
@@ -96,9 +103,9 @@ class BotsController < ApplicationController
       I18n.t('category.list', locale: I18n.locale).invert[params[:category]]
     end
     def get_platform
-      return :all if params[:platform].blank?
+      return :all if params[:platform].nil?
       return :all if params[:platform] == I18n.t('platform.all_slug', locale: I18n.locale)
-      params[:platform]
+      Provider.where(code: params[:platform]).first
     end
     def get_language
       return :all if params[:language].blank?

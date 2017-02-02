@@ -1,0 +1,27 @@
+<%= simple_form_for(@provider, html: { class: 'form-horizontal ' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }
+  ) do |f| %>
+
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :code %>
+  <%= f.input :icon, as: :file %>
+  <%= f.input :visible, as: :boolean%>
+
+  <h3>Descriptions</h3>
+  <%= f.input :description_en, input_html: {rows: 5 }%>
+  <%= f.input :description_fr, input_html: {rows: 5 } %>
+  <%= f.input :website_url , as: :url, placeholder: 'http://example.com'%>
+  <%= f.input :directory_url , as: :url, placeholder: 'http://example.com'%>
+
+
+  <div class="button-bar">
+    <%= f.button :submit , value: I18n.t('save'), class: 'btn-primary'%>
+    <%= link_to( I18n.t('show'), @provider, class:'btn btn-default' ) if @provider.persisted?%>
+    <%= link_to I18n.t('return'), providers_path , class:'btn btn-default'%>
+  </div>
+<%end%>

@@ -1,7 +1,11 @@
 module ApplicationHelper
 
   def directory_link(name, platform: :all,category: :all ,language: :all, klass: '')
-    platform = I18n.t('platform.all_slug') if [:all, nil].include? platform
+    if [:all, nil].include? platform
+      platform_code = I18n.t('platform.all_slug')
+    else
+      platform_code = platform.code
+    end
     if [:all, nil].include? category
       category = I18n.t('category.all_slug')
     else
@@ -13,7 +17,7 @@ module ApplicationHelper
       language = I18n.t("language.list.#{language}")
     end
     link_to name,
-      bot_directory_path(platform: platform, language: language, category: category),
+      bot_directory_path(platform: platform_code, language: language, category: category),
       class: klass
   end
 end

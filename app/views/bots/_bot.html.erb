@@ -9,8 +9,8 @@
       <% unless bot.categories.nil?%>
         <%= bot.categories.map{|c| "<span class='label label-default'>#{I18n.t("category.list.#{c}")}</span>"}.join(' ').html_safe %><br>
       <%end%>
-      <% unless bot.platforms.nil?%>
-        <%= bot.platforms.map{|p| "<span class='label label-default'>#{p.gsub('_', ' ')}</span>"}.join(' ').html_safe %><br>
+      <% unless bot.platforms.empty?%>
+        <%= bot.platforms.map{|p| "<span class='label label-default'>#{p.provider.name}</span>"}.join(' ').html_safe %><br>
       <%end%>
       </div>
   </div>

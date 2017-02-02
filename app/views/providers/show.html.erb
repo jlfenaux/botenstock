@@ -1,0 +1,14 @@
+<div class='container bg-white'>
+  <h1><%=@provider.name%> </h1>
+
+  <p><%= @provider.description %></p>
+  <%= image_tag @provider.icon.url(:medium), class:'icon'%>
+  <%= image_tag @provider.icon.url(:small), class:'icon'%>
+  <%= image_tag @provider.icon.url(:thumb), class:'icon'%>
+
+  <div class='button-bar'>
+    <%= link_to I18n.t('edit'), edit_provider_path(@provider) , class:'btn btn-default'%>
+    <%= link_to I18n.t('add_provider'), new_provider_path(), class:'btn btn-default' %>
+    <%= link_to I18n.t('return'), providers_path, class:'btn btn-default' %>
+  </div>
+</div>

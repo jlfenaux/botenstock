@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129165706) do
+ActiveRecord::Schema.define(version: 20170202112424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170129165706) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "categories",                     array: true
-    t.string   "platforms",                      array: true
     t.string   "permalink"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
@@ -52,7 +51,26 @@ ActiveRecord::Schema.define(version: 20170129165706) do
     t.text     "description_en"
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree
-    t.index ["platforms"], name: "index_bots_on_platforms", using: :gin
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.integer "bot_id"
+    t.integer "provider_id"
+    t.string  "url"
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description_en"
+    t.text     "description_fr"
+    t.string   "website_url"
+    t.string   "directory_url"
+    t.string   "code"
+    t.boolean  "visible"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

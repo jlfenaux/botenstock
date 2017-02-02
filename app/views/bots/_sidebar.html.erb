@@ -8,8 +8,8 @@
           language: @language,
           klass: 'list-group-item italic'
       %>
-      <% Bot::PLATFORMS.each do |platform|%>
-        <%= directory_link platform,
+      <% Provider.all.each do |platform|%>
+        <%= directory_link platform.name,
             platform: platform,
             language: @language,
             category: @category,

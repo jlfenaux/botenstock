@@ -1,4 +1,6 @@
 class Bot < ApplicationRecord
+  has_many :platforms
+  accepts_nested_attributes_for :platforms, :reject_if => proc { |a| logger.debug(a); a['url'].blank? }
   validates_uniqueness_of :permalink
   validates_presence_of :permalink
   validates :amazon_echo_url, url: {allow_blank: true}
@@ -69,7 +71,9 @@ class Bot < ApplicationRecord
   end
 
   def platform_url(platform)
-    send("#{platform.downcase}_url")
+    id = Provider.where(code: platform).first
+    self.platforms.select{|p| p.provider_id == id}.first.url
+    # send("#{platform.downcase}_url")
   end
 
   def tagline
@@ -84,10 +88,10 @@ class Bot < ApplicationRecord
 
   def create_permalink
     self.permalink = name.parameterize.to_s.gsub("_", "-")
-    self.platforms= []
-    PLATFORMS.each do |platform|
-       self.platforms << platform unless platform_url(platform).blank?
-    end
+    # self.platforms= []
+    # PLATFORMS.each do |platform|
+    #    self.platforms << platform unless platform_url(platform).blank?
+    # end
     self.languages = self.languages.delete_if{|l| l.blank?}
     self.categories = self.categories.delete_if{|l| l.blank?}
   end

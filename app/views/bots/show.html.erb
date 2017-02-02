@@ -37,7 +37,7 @@
           <div class="panel-heading"><%=I18n.t("bot_page.present_on_platforms")%></div>
           <div class='list-group'>
             <% @bot.platforms.each do |p| %>
-              <%= link_to "#{p}<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, @bot.platform_url(p), target:'_platform', class:'list-group-item'%>
+              <%= link_to "#{p.provider.name}<span class='glyphicon glyphicon-new-window pull-right'></span>".html_safe, p.url, target:'_platform', class:'list-group-item' unless p.url.blank?%>
             <%end%>
           </div>
         </div>

@@ -14,17 +14,27 @@ fr:
         categories: Catégories
         languages: Langues
         platforms: Plateformes
+      provider:
+        name: Nom
+        description_fr: En français
+        description_en: En anglais
+        website_url: Site web
+        directory_url: Annuaire officiel des bots
 
   routes:
     bots: bots
   default_title: Tous les bots, sur toutes les plateformes
   add_bot: Soumettre un bot
+  add_provider: Ajouter une nouvelle plateforme
   return: Retour
   edit: Editer
   save: Enregistrer
   show: Afficher
   search: Rechercher
   search_placeholder: Rechercher...
+  provider:
+    one: plateforme
+    other: plateformes
   language:
     one: langue
     other: langues

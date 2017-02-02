@@ -1,0 +1,26 @@
+<div class='container bg-white'>
+  <h1> <%=I18n.t('platform',count: 2).titlecase%> </h1>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th colspan=3><%=I18n.t('simple_form.labels.provider.name')%></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @providers.each do |provider| %>
+        <tr >
+          <td width='50px'><%= image_tag provider.icon.url(:thumb)%></td><td style='vertical-align:middle;'><%=link_to provider.name, edit_provider_path(provider)%></td>
+          <td>
+            <%if provider.visible%>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <%end%>
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+  <div class='button-bar'>
+     <%=link_to I18n.t('add_provider'), new_provider_path(), class:'btn btn-primary'%>
+  </div>
+
+</div>

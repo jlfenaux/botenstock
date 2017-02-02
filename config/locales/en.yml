@@ -34,17 +34,26 @@ en:
         categories: Categories
         languages: Languages
         platforms: Platforms
-
+      provider:
+        name: Name
+        description_fr: in French
+        description_en: in English
+        website_url: Website
+        directory_url: Official Bot Directory
   routes:
     bots: "bots"
   default_title: All bots on all platforms
   add_bot: Add a new bot
+  add_provider: Add a new provider
   return: Return
   edit: Edit
   save: Save
   show: Show
   search: Search
   search_placeholder: Search for...
+  provider:
+    one: provider
+    other: providers
   language:
     one: language
     other: languages
