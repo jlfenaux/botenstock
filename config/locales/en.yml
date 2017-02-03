@@ -34,6 +34,8 @@ en:
         categories: Categories
         languages: Languages
         platforms: Platforms
+        created_at: Created
+        updated_at: Last update
       provider:
         name: Name
         description_fr: in French
@@ -46,7 +48,7 @@ en:
   default_title: All bots on all platforms
   access_not_granted: Sorry, you are not allowed to access that page.
   add_bot: Add a new bot
-  add_provider: Add a new provider
+  add_provider: Add a new platform
   return: Return
   edit: Edit
   save: Save
@@ -54,8 +56,8 @@ en:
   search: Search
   search_placeholder: Search for...
   provider:
-    one: provider
-    other: providers
+    one: platform
+    other: platforms
   language:
     one: language
     other: languages

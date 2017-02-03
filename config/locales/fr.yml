@@ -14,6 +14,8 @@ fr:
         categories: Catégories
         languages: Langues
         platforms: Plateformes
+        created_at: Créé le
+        updated_at: dernière MAJ
       provider:
         name: Nom
         description_fr: En français
@@ -24,6 +26,7 @@ fr:
   routes:
     bots: bots
     providers: platforms
+    directory: annuaire
   default_title: Tous les bots, sur toutes les plateformes
   access_not_granted: Désolé, mais vous n'êtes pas autorisé à accéder à cette page.
   add_bot: Soumettre un bot

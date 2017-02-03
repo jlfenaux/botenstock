@@ -38,25 +38,8 @@
     <%= f.input :logo, as: :file %>
 
   <h3><%=I18n.t('simple_form.labels.bot.platforms')%></h3>
-
     <%= f.simple_fields_for :platforms do |p| %>
       <%= p.input :url, as: :url, label: p.object.provider.name,  placeholder: 'http://example.com'%>
     <% end %>
-
-    <%= f.input :amazon_echo_url , as: :url, label: 'Amazon Echo', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :android_url, as: :url , label: 'Android', placeholder: 'http://example.com', disabled: true%>
-    <%#= f.input :discord_url, as: :url , label: 'Discord', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :email_url, as: :url , label: 'Email', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :imessage_url, as: :url , label: 'iMessage', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :ios_url, as: :url , label: 'iOS', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :kik_url, as: :url , label: 'Kik', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :messenger_url, as: :url , label: 'Messenger', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :skype_url, as: :url , label: 'Skype', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :slack_url, as: :url , label: 'Slack', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :sms_url, as: :url , label: 'Sms', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :telegram_url, as: :url , label: 'Telegram', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :twitter_url, as: :url , label: 'Twitter', placeholder: 'http://example.com', disabled: true%>
-    <%= f.input :web_url, as: :url , label: 'Web', placeholder: 'http://example.com', disabled: true%>
-
     <%= render 'button_bar', f: f %>
 <% end %>

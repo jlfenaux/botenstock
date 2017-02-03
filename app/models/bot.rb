@@ -66,9 +66,6 @@ class Bot < ApplicationRecord
     'Voyage'
   ]
   LANGUAGES = ['Anglais', 'Français']
-  def to_param
-    permalink
-  end
 
   def platform_url(platform)
     id = Provider.where(code: platform).first

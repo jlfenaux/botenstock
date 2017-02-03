@@ -2,7 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.admin-container {
+  .sidebar {
+    padding: 0;
+    padding-top: 5px;
+    background-color: $brand-primary;
+    a {
 
+      display: block;
+      color: white;
+      width: 100%;
+      padding: 5px 10px;
+      margin: 0;
+      .badge {
+        padding-top: 5px;
+        font-size: 60%;
+        float: right;
+      }
+    }
+    a:hover {
+      color: black;
+      text-decoration: none;
+      background-color: $hover-color;
+    }
+  }
+  .content {
+    background-color: white;
+  }
+}
 
 .search-box {
   background-color: $brand-primary;
@@ -165,3 +192,4 @@ h4 {
 .italic {
   font-style: italic;
 }
+

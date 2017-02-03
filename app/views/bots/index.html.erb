@@ -1,25 +1,24 @@
-
-<%= render 'search_box' %>
-<%= render 'layouts/messages' %>
-<!-- Page Content -->
-<div class="container">
-    <!-- /.row -->
-    <div class="col-md-12">
-        <%= render 'sidebar' %>
-        <div class="col-md-9 no-padding">
-          <div class='index-header'>
-            <h1><%=@title%></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
-          </div>
-
-            <%= render @bots %>
-
-          <div class='row clearfix col-sm-12 text-center'>
-          <br>
-            <%= will_paginate @bots, class:'apple_pagination' %>
-            <%=link_to I18n.t('add_bot'), new_bot_path, class: 'btn btn-primary'%>
-          </div>
-        </div>
-    </div>
-
+<h1>Bots</h1>
+<table class='table table-hover table-condensed table-striped'>
+  <thead>
+    <tr>
+      <th><%=I18n.t('simple_form.labels.bot.name')%></th>
+      <th><%=I18n.t('simple_form.labels.bot.created_at')%></th>
+      <th><%=I18n.t('simple_form.labels.bot.updated_at')%></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bots.each do |bot| %>
+      <tr>
+        <td><%=link_to bot.name, edit_bot_path(bot) %></td>
+        <td><%=I18n.l bot.created_at, format: :long%></td>
+        <td><%=I18n.l bot.updated_at, format: :long%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+<%= will_paginate @bots, class:'apple_pagination' %>
+<div class="button-bar">
+  <%=link_to I18n.t('add_bot'), new_bot_path, class: 'btn btn-primary'%>
 </div>
+
