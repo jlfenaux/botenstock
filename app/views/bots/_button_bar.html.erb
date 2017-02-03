@@ -1,5 +1,5 @@
 <div class="button-bar">
   <%= f.button :submit , value: I18n.t('save'), class: 'btn-primary'%>
-  <%= link_to( I18n.t('show'), @bot, class:'btn btn-default' ) if @bot.persisted?%>
+  <%= link_to( I18n.t('show'), bot_page_path(permalink:@bot.permalink), class:'btn btn-default' ) if @bot.persisted?%>
   <%= link_to I18n.t('return'), bots_path , class:'btn btn-default'%>
 </div>
