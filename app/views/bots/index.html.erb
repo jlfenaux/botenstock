@@ -1,4 +1,4 @@
-<h1>Bots</h1>
+<h1><%= pluralize @bots.total_entries, 'bot'%> </h1>
 <div class='col-sm-3'>
   <%= select_tag :category, options_for_select(Bot::CATEGORIES, params[:category], ),  class: 'form-control input-sm', id:'bots-category',include_blank: I18n.t('category.all')%>
 </div>
@@ -10,8 +10,8 @@
       ),
       class: 'form-control input-sm', id:'bots-platform',include_blank: I18n.t('platform.all')%>
 </div>
-<div class='col-sm-3'>
-<%= text_field_tag :keywords, params[:keywords], id:'bots-keywords'%>
+<div class='col-sm-6'>
+<%= text_field_tag :keywords, params[:keywords], id:'bots-keywords', placeholder:I18n.t('search')+'...', class:'form-control input-sm'%>
 </div>
 <table class='table table-hover table-condensed table-striped'>
   <thead>

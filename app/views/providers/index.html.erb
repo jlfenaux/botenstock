@@ -1,6 +1,6 @@
 
-  <h1> <%=I18n.t('platform',count: 2).titlecase%> </h1>
-  <table class='table'>
+  <h1> <%=@providers.length%> <%=I18n.t('platform',count: @providers.length).titlecase%> </h1>
+  <table class='table table-hover table-condensed table-striped'>
     <thead>
       <tr>
         <th colspan=3><%=I18n.t('simple_form.labels.provider.name')%></th>
