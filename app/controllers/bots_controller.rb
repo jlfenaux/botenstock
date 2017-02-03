@@ -12,13 +12,13 @@ class BotsController < ApplicationController
     @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless params[:language].blank?
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
     @bots = @bots.includes(platforms: :provider)
-    @bots = @bots.paginate(:page => params[:page], :per_page => 20)
+    @bots = @bots.order(:name).paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /bots/1
   # GET /bots/1.json
   def show
-    redirect_to bot_path(permalink: @bot.permalink)
+    redirect_to bot_page_path(permalink: @bot.permalink)
   end
 
   # GET /bots/new

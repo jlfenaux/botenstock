@@ -71,6 +71,7 @@ class Bot < ApplicationRecord
   private
 
   def create_permalink
+    self.name = name.strip
     self.permalink = name.parameterize.to_s.gsub("_", "-")
     # self.platforms= []
     # PLATFORMS.each do |platform|
