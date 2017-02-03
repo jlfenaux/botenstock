@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202112424) do
+ActiveRecord::Schema.define(version: 20170203103759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170202112424) do
     t.string   "web_url"
     t.string   "tagline_en"
     t.text     "description_en"
+    t.index "to_tsvector('french'::regconfig, (((name)::text || ' '::text) || description_fr))", name: "bot_search_idx", using: :gin
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree
   end
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(version: 20170202112424) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "roles",                  default: [],              array: true
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

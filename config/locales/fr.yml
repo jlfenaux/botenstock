@@ -23,7 +23,9 @@ fr:
 
   routes:
     bots: bots
+    providers: platforms
   default_title: Tous les bots, sur toutes les plateformes
+  access_not_granted: Désolé, mais vous n'êtes pas autorisé à accéder à cette page.
   add_bot: Soumettre un bot
   add_provider: Ajouter une nouvelle plateforme
   return: Retour

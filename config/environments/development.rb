@@ -55,7 +55,7 @@ Rails.application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-      bucket: 'botenstock-dev',
+      bucket: 'botenstock',
       access_key_id: 'AKIAJ5YNQRR4UQZY4WWA',
       secret_access_key: "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",
       s3_region: 'eu-west-1'

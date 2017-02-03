@@ -41,8 +41,10 @@ en:
         website_url: Website
         directory_url: Official Bot Directory
   routes:
-    bots: "bots"
+    bots: bots
+    providers: platforms
   default_title: All bots on all platforms
+  access_not_granted: Sorry, you are not allowed to access that page.
   add_bot: Add a new bot
   add_provider: Add a new provider
   return: Return

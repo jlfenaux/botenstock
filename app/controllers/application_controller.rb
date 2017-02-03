@@ -8,5 +8,12 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+  def check_if_admin
+    unless current_user && current_user.has_role?(:admin)
+      flash[:error] = I18n.t('access_not_granted')
+      redirect_to root_url
+    end
+  end
+
 
 end
