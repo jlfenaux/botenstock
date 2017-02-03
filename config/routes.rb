@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   localized do
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
-    get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', default:{platform: :all, language: :all, cateogry: :all}, as: 'directory'
+    get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', as: 'directory'
     resources :providers, :bots
     get 'admin' => "admin#index", as: 'admin'
     root to: 'homepage#index'

@@ -56,9 +56,9 @@
           </p>
 
           <div class='button-bar'>
-            <%= link_to I18n.t('edit'), edit_bot_path(@bot) , class:'btn btn-default'%>
+            <%= link_to I18n.t('edit'), edit_bot_path(@bot) , class:'btn btn-default' if current_user && current_user.has_role?(:admin) %>
             <%= link_to I18n.t('add_bot'), new_bot_path(), class:'btn btn-default' %>
-            <%= link_to I18n.t('return'), bots_path, class:'btn btn-default' %>
+            <%= link_to I18n.t('return'), :back, class:'btn btn-default' %>
           </div>
         </div>
       </div>
