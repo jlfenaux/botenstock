@@ -5,9 +5,9 @@ class BotsController < ApplicationController
   # GET /bots.json
   def index
     @bots = Bot.all
-    @bots = @bots.where(" ? = ANY(categories)", params[:cateogry]) unless params[:cateogry].nil?
-    @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", params[:cateogry]) unless params[:platform].nil?
-    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless params[:platform].nil?
+    @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless params[:category].blank?
+    @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", params[:platform].to_i) unless params[:platform].blank?
+    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless params[:language].blank?
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
     @bots = @bots.includes(platforms: :provider)
     @bots = @bots.paginate(:page => params[:page], :per_page => 20)

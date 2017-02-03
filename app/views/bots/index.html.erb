@@ -1,4 +1,18 @@
 <h1>Bots</h1>
+<div class='col-sm-3'>
+  <%= select_tag :category, options_for_select(Bot::CATEGORIES, params[:category], ),  class: 'form-control input-sm', id:'bots-category',include_blank: I18n.t('category.all')%>
+</div>
+<div class='col-sm-3'>
+  <%= select_tag :platform,
+      options_for_select(
+        Provider.all.map{|p| [p.name, p.id]},
+        params[:platform]
+      ),
+      class: 'form-control input-sm', id:'bots-platform',include_blank: I18n.t('platform.all')%>
+</div>
+<div class='col-sm-3'>
+<%= text_field_tag :keywords, params[:keywords], id:'bots-keywords'%>
+</div>
 <table class='table table-hover table-condensed table-striped'>
   <thead>
     <tr>
