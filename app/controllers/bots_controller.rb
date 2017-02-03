@@ -1,4 +1,6 @@
 class BotsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin
   before_action :set_bot, only: [:show, :edit, :update, :destroy]
   layout "admin"
   # GET /bots

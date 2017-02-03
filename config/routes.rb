@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
     get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', default:{platform: :all, language: :all, cateogry: :all}, as: 'directory'
     resources :providers, :bots
+    get 'admin' => "admin#index", as: 'admin'
     root to: 'homepage#index'
   end
   # root to: 'homepage#index'
