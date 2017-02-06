@@ -1,50 +1,16 @@
-Botenstock
-================
+# 2017/02/06 lundi
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+## A faire cette semaine
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+* [ ] Nouvelle homepage, une fois que Christophe a fait le logo
+* [ ] Afficher un footer avec une entrée pub et contact (combo: contacter la régie, proposer un bot, joindre la rédaction)
+* [ ] Ajoute un moteur de blog bilingue en markdown
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
 
-Problems? Issues?
------------
+# Todo list
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+* [ ] Mettre en place le nouveau nom de domaine sur heroku
+* [ ] Utiliser let's encrypt pour que le site soit en SSL
+* [ ] Permettre la sélection des bots éditorialisés (langue / bot_id / Date début / date fin)
+* [ ] Créer une page Facebook et un compte twitter pour le site
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.3.2
-- Rails 5.0.1
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
