@@ -13,4 +13,8 @@
 * [ ] Utiliser let's encrypt pour que le site soit en SSL
 * [ ] Permettre la sélection des bots éditorialisés (langue / bot_id / Date début / date fin)
 * [ ] Créer une page Facebook et un compte twitter pour le site
+* [ ] Gérer un statut pour les bots (ok, à valider, spam, supprimé)
+* [ ] Ajouter des commentaires sur les bots
+* [ ] Ajouter une note (thumb up / down)
+
 
