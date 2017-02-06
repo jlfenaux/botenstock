@@ -19,7 +19,9 @@
     cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <div class='button-bar text-center'>
-    <%= link_to "Découvrez tous les bots", bots_path(), class:'btn btn-primary'%>
+    <%= directory_link I18n.t('discover_all_bots'),
+          klass: 'btn btn-primary'
+      %>
     </div>
     </div>
     <div class='col-md-4'>

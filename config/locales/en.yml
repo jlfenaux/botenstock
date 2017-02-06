@@ -47,6 +47,7 @@ en:
     providers: platforms
   default_title: All bots on all platforms
   access_not_granted: Sorry, you are not allowed to access that page.
+  discover_all_bots: Let's discover the bots
   add_bot: Add a new bot
   add_provider: Add a new platform
   return: Return

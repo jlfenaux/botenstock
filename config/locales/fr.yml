@@ -29,6 +29,7 @@ fr:
     directory: annuaire
   default_title: Tous les bots, sur toutes les plateformes
   access_not_granted: Désolé, mais vous n'êtes pas autorisé à accéder à cette page.
+  discover_all_bots: Découvrez tous les bots
   add_bot: Soumettre un bot
   add_provider: Ajouter une nouvelle plateforme
   return: Retour
