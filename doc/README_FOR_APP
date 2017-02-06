@@ -1,2 +1,16 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+# 2017/02/06 lundi
+
+## A faire cette semaine
+
+* [ ] Nouvelle homepage, une fois que Christophe a fait le logo
+* [ ] Afficher un footer avec une entrée pub et contact (combo: contacter la régie, proposer un bot, joindre la rédaction)
+* [ ] Ajoute un moteur de blog bilingue en markdown
+
+
+# Todo list
+
+* [ ] Mettre en place le nouveau nom de domaine sur heroku
+* [ ] Utiliser let's encrypt pour que le site soit en SSL
+* [ ] Permettre la sélection des bots éditorialisés (langue / bot_id / Date début / date fin)
+* [ ] Créer une page Facebook et un compte twitter pour le site
+
