@@ -21,6 +21,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'route_translator'
 gem 'groupdate'
 gem 'chartkick'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug', platform: :mri

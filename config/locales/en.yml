@@ -22,6 +22,11 @@
 en:
   simple_form:
     labels:
+      post:
+        title: Title
+        body: Body
+        published_at: Published at
+        language: Language
       bot:
         name: Name
         tagline_fr: in French
@@ -49,6 +54,7 @@ en:
   access_not_granted: Sorry, you are not allowed to access that page.
   discover_all_bots: Let's discover the bots
   add_bot: Add a new bot
+  add_post: Add a post
   add_provider: Add a new platform
   return: Return
   edit: Edit

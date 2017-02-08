@@ -2,6 +2,11 @@
 fr:
   simple_form:
     labels:
+      post:
+        title: Titre
+        body: Contenu
+        published_at: Publié le
+        language: Langue
       bot:
         name: Nom
         tagline_fr: En français
@@ -31,6 +36,7 @@ fr:
   access_not_granted: Désolé, mais vous n'êtes pas autorisé à accéder à cette page.
   discover_all_bots: Découvrez tous les bots
   add_bot: Soumettre un bot
+  add_post: Ajouter un article
   add_provider: Ajouter une nouvelle plateforme
   return: Retour
   edit: Editer

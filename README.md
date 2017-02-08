@@ -16,5 +16,6 @@
 * [ ] Gérer un statut pour les bots (ok, à valider, spam, supprimé)
 * [ ] Ajouter des commentaires sur les bots
 * [ ] Ajouter une note (thumb up / down)
+* [ ] Ajouter les Meta tags pour le <SECTION></SECTION>
 
 

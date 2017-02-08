@@ -1,0 +1,25 @@
+
+<%= simple_form_for(@post, html: { class: 'form-horizontal ' },
+  wrapper: :horizontal_form,
+    wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean,
+  }) do |f| %>
+
+    <%= f.error_notification %>
+    <%= f.input :title %>
+    <%= f.input :published_at %>
+    <%= f.input :language,
+        as: :radio_buttons,
+        collection: Bot::LANGUAGES,
+        label_method: ->(obj){ t("language.list.#{obj}") }
+    %>
+    <%= f.input :body, input_html: {rows: 15} %>
+<div class="button-bar">
+  <%= f.button :submit , value: I18n.t('save'), class: 'btn-primary'%>
+  <%= link_to( I18n.t('show'), bot_page_path(permalink:@post.permalink), class:'btn btn-default' ) if @post.persisted?%>
+  <%= link_to I18n.t('return'), posts_path , class:'btn btn-default'%>
+</div>
+<% end %>

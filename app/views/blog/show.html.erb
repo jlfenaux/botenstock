@@ -1,0 +1,7 @@
+<div class="container bg-white ">
+  <h1><%=@post.title%></h1>
+  <p><%=@post.published%></p>
+  <div><%=@post.html%></div>
+
+  <%=link_to I18n.t('edit'), edit_post_path(@post.id),class:'btn btn-default' if current_user.has_role?(:admin)%>
+</div>
