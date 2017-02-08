@@ -50,9 +50,9 @@ fr:
       Anglais: Anglais
       Français: Français
   platform:
-    one: platforme
-    other: platformes
-    all: Toutes les platformes
+    one: plateforme
+    other: plateformes
+    all: Toutes les plateformes
     all_slug: toutes_les_plateformes
   category:
     one: catégorie
