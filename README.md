@@ -6,6 +6,7 @@
 * [ ] Afficher un footer avec une entrée pub et contact (combo: contacter la régie, proposer un bot, joindre la rédaction)
 * [ ] Ajoute un moteur de blog bilingue en markdown
 * [ ] Migrer les langues pour utiliser des codes iso sur 2 caractères
+* [ ] rendre les icones des plateformes de la search box cliquables
 
 
 # Todo list
