@@ -3,7 +3,7 @@
     <%= form_tag Directory.new.path , method: :get, class: 'col-md-8 col-md-offset-2' do%>
       <div class='logos'>
         <% Provider.visible.all.each do |provider|%>
-          <%=  image_tag provider.icon.url(:thumb)%>
+          <%= link_to image_tag(provider.icon.url(:thumb)), Directory.new(platform: provider).path%>
         <%end%>
       </div>
       <div class='input-group'>
