@@ -61,6 +61,8 @@ en:
   edit: Edit
   save: Save
   show: Show
+  delete: Delete
+  sure?: Are you sure?
   search: Search
   search_placeholder: Search for...
   post:
