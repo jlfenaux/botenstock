@@ -53,8 +53,8 @@ fr:
     all: Toutes les langues
     all_slug: toutes_les_langues
     list:
-      Anglais: Anglais
-      Français: Français
+      en: Anglais
+      fr: Français
   platform:
     one: plateforme
     other: plateformes

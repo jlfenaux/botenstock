@@ -17,7 +17,7 @@ class DirectoryController < ApplicationController
     @bots = Bot.all
     @bots = @bots.where(" ? = ANY(categories)", @category) unless [nil, :all].include? @category
     @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", @platform.id) unless @platform == :all
-    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless [nil, :all].include? @language
+    @bots = @bots.where(" ? = ANY(languages)", @language) unless [nil, :all].include? @language
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
     @bots = @bots.includes(platforms: :provider)
     @bots = @bots.paginate(:page => params[:page], :per_page => 10)

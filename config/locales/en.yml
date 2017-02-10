@@ -71,8 +71,8 @@ en:
     all: All languages
     all_slug: all_languages
     list:
-      Anglais: English
-      Français: French
+      en: English
+      fr: French
   platform:
     one: platform
     other: platforms

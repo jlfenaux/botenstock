@@ -53,11 +53,11 @@ class Bot < ApplicationRecord
     'Voyage'
   ]
   LANGUAGES = ['Anglais', 'Français']
+  LANGUAGES = ['en', 'fr']
 
   def platform_url(platform)
     id = Provider.where(code: platform).first
     self.platforms.select{|p| p.provider_id == id}.first.url
-    # send("#{platform.downcase}_url")
   end
 
   def tagline
@@ -66,6 +66,19 @@ class Bot < ApplicationRecord
 
   def description
     send("description_#{I18n.locale}")
+  end
+
+  def self.migrate_languages
+    Bot.all.each do |bot|
+      if bot.languages && bot.languages.any?
+        languages = bot.languages
+        new_languages = []
+        new_languages << 'fr' if languages.include?('Français')
+        new_languages << 'en' if languages.include?('Anglais')
+        bot.languages = new_languages
+        bot.save
+      end
+    end
   end
 
   private
