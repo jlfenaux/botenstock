@@ -10,7 +10,7 @@
 
     <%= f.error_notification %>
     <%= f.input :title %>
-    <%= f.input :published_at %>
+    <%= f.input :published_at, as: :datetime, html5: true %>
     <%= f.input :language,
         as: :radio_buttons,
         collection: Bot::LANGUAGES,
