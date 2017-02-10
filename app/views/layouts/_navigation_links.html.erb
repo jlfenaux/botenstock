@@ -1,18 +1,24 @@
 <%# add navigation links to this file %>
 
-         <li>
-            <% if I18n.locale == :fr %>
-            <%= link_to "English", root_en_path() %>
+<li>
+  <%= link_to 'Blog', blog_path%>
+</li>
+<li>
+  <%= link_to 'Admin', admin_path if current_user.has_role?(:admin)%>
+</li>
+<li>
+  <% if I18n.locale == :fr %>
+    <%= link_to "English", root_en_path() %>
 
-          <% else %>
-            <%= link_to "Français", root_fr_path() %>
+  <% else %>
+    <%= link_to "Français", root_fr_path() %>
 
-          <%end%>
-         </li>
-        <% if user_signed_in?%>
-          <li><%= link_to t("devise.shared.links.sign_out"), destroy_user_session_path, method: :delete %></li>
-        <%else%>
-          <li><%= link_to t("devise.shared.links.sign_up"), new_user_registration_path %></li>
-          <li><%= link_to t("devise.shared.links.sign_in"), new_user_session_path %></li>
-        <%end%>
+  <%end%>
+</li>
+<% if user_signed_in?%>
+<li><%= link_to t("devise.shared.links.sign_out"), destroy_user_session_path, method: :delete %></li>
+<%else%>
+<li><%= link_to t("devise.shared.links.sign_up"), new_user_registration_path %></li>
+<li><%= link_to t("devise.shared.links.sign_in"), new_user_session_path %></li>
+<%end%>
 

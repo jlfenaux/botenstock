@@ -28,6 +28,10 @@
           Bots
           <span class="badge"><%=Bot.count%></span>
         </a>
+        <a href="<%=posts_path()%>">
+          <%= I18n.t('post', count: Post.count).titlecase %>
+          <span class="badge"><%=Post.count%></span>
+        </a>
         <a href="<%=photos_path()%>">
           Photos
           <span class="badge"><%=Photo.count%></span>

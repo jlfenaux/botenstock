@@ -7,6 +7,7 @@ fr:
         body: Contenu
         published_at: Publié le
         language: Langue
+        summary: Résumé
       bot:
         name: Nom
         tagline_fr: En français
@@ -44,6 +45,9 @@ fr:
   show: Afficher
   search: Rechercher
   search_placeholder: Rechercher...
+  post:
+    one: article
+    other: articles
   provider:
     one: plateforme
     other: plateformes

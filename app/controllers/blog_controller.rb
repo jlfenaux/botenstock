@@ -1,6 +1,6 @@
 class BlogController < ApplicationController
   def index
-    @posts = Post.published.order('published_at desc').paginate(:page => params[:page], :per_page => 20)
+    @posts = Post.published.language(I18n.locale).order('published_at desc').paginate(:page => params[:page], :per_page => 20)
   end
 
   def show

@@ -1,4 +1,4 @@
-<h1><%= pluralize @posts.total_entries, 'post'%> </h1>
+<h1><%= Post.count%> <%= I18n.t('post', count: Post.count).titlecase %> </h1>
 
 <table class='table table-hover table-condensed table-striped'>
   <thead>

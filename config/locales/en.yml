@@ -27,6 +27,7 @@ en:
         body: Body
         published_at: Published at
         language: Language
+        summary: Summary
       bot:
         name: Name
         tagline_fr: in French
@@ -62,6 +63,9 @@ en:
   show: Show
   search: Search
   search_placeholder: Search for...
+  post:
+    one: post
+    other: posts
   provider:
     one: platform
     other: platforms

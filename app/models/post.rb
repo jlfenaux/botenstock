@@ -2,7 +2,12 @@ class Post < ApplicationRecord
   before_validation :create_permalink
   validates_uniqueness_of :permalink
   validates_presence_of :permalink
-  scope :published, -> {where('published_at >= now()')}
+  validates_presence_of :photo_id
+  validates_presence_of :title
+  validates_presence_of :language
+  validates_presence_of :summary
+  belongs_to :photo
+  scope :published, -> {where('published_at <= now()')}
   scope :language, -> (lang) {where(language: lang)}
 
   def published
