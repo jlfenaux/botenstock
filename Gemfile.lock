@@ -92,6 +92,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dropzonejs-rails (0.7.3)
+      rails (> 3.1)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -315,6 +317,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise
+  dropzonejs-rails
   factory_girl_rails
   faker
   groupdate

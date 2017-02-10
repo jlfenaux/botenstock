@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
   localized do
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
+    resources :photos, only: [:index, :create, :destroy]
     get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', as: 'directory'
     resources :providers, :bots, :posts
     get 'admin' => "admin#index", as: 'admin'

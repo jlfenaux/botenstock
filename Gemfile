@@ -22,6 +22,7 @@ gem 'route_translator'
 gem 'groupdate'
 gem 'chartkick'
 gem 'redcarpet'
+gem 'dropzonejs-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

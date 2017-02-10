@@ -1,0 +1,14 @@
+<div class='container bg-white'>
+  <h1>Photos</h1>
+  <%= form_for(Photo.new, html: { multipart: true, class: "dropzone"}) do |f|  %>
+    <div class="fallback">
+      <%= f.file_field :file %><br>
+      <%= f.submit "Upload photos" %>
+    </div>
+  <% end %>
+
+  <div class="index">
+    <%= render "index" %>
+  </div>
+  <br>
+</div>

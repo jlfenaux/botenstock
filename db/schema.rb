@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208070747) do
+ActiveRecord::Schema.define(version: 20170210160915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20170208070747) do
     t.index "to_tsvector('french'::regconfig, (((name)::text || ' '::text) || description_fr))", name: "bot_search_idx", using: :gin
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "platforms", force: :cascade do |t|

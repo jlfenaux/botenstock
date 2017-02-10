@@ -1,0 +1,7 @@
+<% @photos.each do |photo| %>
+  <div class="img-thumbnail">
+  <h4><%=photo.id%></h4>
+  <%= image_tag photo.file.url(:medium), alt: photo.file.url(:medium) %>
+  <%= link_to "Delete" , photo_path(photo), method: :delete, class: 'btn btn-xs btn-danger',data: { confirm: 'Are you sure?' }, style:'width: 100%', remote: true  %>
+  </div>
+<% end %>
