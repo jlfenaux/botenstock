@@ -12,7 +12,20 @@ class Post < ApplicationRecord
 
   def html
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    markdown.render(body).html_safe
+    content = body
+    content.gsub!(/§photo\((\d*)\)/) do
+      photo = Photo.find_by_id($1.to_i)
+      %(<img class='img-responsive' src="#{photo.file(:original)}">) if photo.present?
+    end
+    content.gsub!(/§bot_name\((\d*)\)/) do
+      bot = Bot.find_by_id($1.to_i)
+      bot.name if bot.present?
+    end
+    content.gsub!(/§bot_link\((\d*)\)/) do
+      bot = Bot.find_by_id($1.to_i)
+      %(<a href='#{Rails.application.routes.url_helpers.bot_page_path(permalink: bot.permalink)}' target='_new' >#{bot.name}</a>) if bot.present?
+    end
+    markdown.render(content).html_safe
   end
    private
 
