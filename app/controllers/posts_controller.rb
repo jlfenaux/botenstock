@@ -25,6 +25,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def preview
+    @post = Post.new(body: params[:preview_text])
+    render text: @post.html
+  end
+
   # POST /posts
   # POST /posts.json
   def create

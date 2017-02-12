@@ -26,6 +26,10 @@ class Post < ApplicationRecord
       bot = Bot.find_by_id($1.to_i)
       bot.name if bot.present?
     end
+    content.gsub!(/§bot_logo\((\d*)\)/) do
+      bot = Bot.find_by_id($1.to_i)
+      %(<img src="#{bot.logo(:medium)}">) if bot.present?
+    end
     content.gsub!(/§bot_link\((\d*)\)/) do
       bot = Bot.find_by_id($1.to_i)
       %(<a href='#{Rails.application.routes.url_helpers.bot_page_path(permalink: bot.permalink)}' target='_new' >#{bot.name}</a>) if bot.present?
