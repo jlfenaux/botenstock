@@ -4,8 +4,8 @@
 
 * [ ] Nouvelle homepage, une fois que Christophe a fait le logo
 * [ ] Afficher un footer avec une entrée pub et contact (combo: contacter la régie, proposer un bot, joindre la rédaction)
-* [ ] Ajoute un moteur de blog bilingue en markdown
-* [ ] Migrer les langues pour utiliser des codes iso sur 2 caractères
+* [x] Ajoute un moteur de blog bilingue en markdown
+* [x] Migrer les langues pour utiliser des codes iso sur 2 caractères
 * [x] rendre les icones des plateformes de la search box cliquables
 
 
