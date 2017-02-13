@@ -2,7 +2,7 @@
 
 ## A faire cette semaine
 
-* [ ] Nouvelle homepage, une fois que Christophe a fait le logo
+* [x] Nouvelle homepage, une fois que Christophe a fait le logo
 * [ ] Afficher un footer avec une entrée pub et contact (combo: contacter la régie, proposer un bot, joindre la rédaction)
 * [x] Ajoute un moteur de blog bilingue en markdown
 * [x] Migrer les langues pour utiliser des codes iso sur 2 caractères
