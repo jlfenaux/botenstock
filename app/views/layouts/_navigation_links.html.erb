@@ -4,7 +4,7 @@
   <%= link_to 'Blog', blog_path%>
 </li>
 <li>
-  <%= link_to 'Admin', admin_path if current_user.has_role?(:admin)%>
+  <%= link_to 'Admin', admin_path if current_user && current_user.has_role?(:admin)%>
 </li>
 <li>
   <% if I18n.locale == :fr %>

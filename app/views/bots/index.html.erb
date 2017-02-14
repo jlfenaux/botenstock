@@ -16,6 +16,7 @@
 <table class='table table-hover table-condensed table-striped'>
   <thead>
     <tr>
+      <th>Id</th>
       <th><%=I18n.t('simple_form.labels.bot.name')%></th>
       <th><%=I18n.t('simple_form.labels.bot.created_at')%></th>
       <th><%=I18n.t('simple_form.labels.bot.updated_at')%></th>
@@ -24,6 +25,7 @@
   <tbody>
     <% @bots.each do |bot| %>
       <tr>
+        <td><%=bot.id%></td>
         <td><%=link_to bot.name, edit_bot_path(bot) %></td>
         <td><%=I18n.l bot.created_at, format: :long%></td>
         <td><%=I18n.l bot.updated_at, format: :long%></td>
