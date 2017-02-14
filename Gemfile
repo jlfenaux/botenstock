@@ -23,6 +23,7 @@ gem 'groupdate'
 gem 'chartkick'
 gem 'redcarpet'
 gem 'dropzonejs-rails'
+gem 'rollbar'
 
 group :development, :test do
   gem 'byebug', platform: :mri

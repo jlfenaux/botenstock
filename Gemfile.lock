@@ -220,6 +220,8 @@ GEM
     redcarpet (3.4.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rollbar (2.14.0)
+      multi_json
     route_translator (5.1.0)
       actionpack (~> 5.0.0)
       activesupport (~> 5.0.0)
@@ -340,6 +342,7 @@ DEPENDENCIES
   rb-fsevent
   rb-inotify
   redcarpet
+  rollbar
   route_translator
   rspec-rails
   sass-rails (~> 5.0)
