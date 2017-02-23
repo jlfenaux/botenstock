@@ -1,6 +1,6 @@
 class Bot < ApplicationRecord
   has_many :platforms
-  accepts_nested_attributes_for :platforms
+  accepts_nested_attributes_for :platforms , allow_destroy: true, reject_if: proc { |attributes| attributes['url'].blank? || attributes['provider_id'].nil?}
   validates_uniqueness_of :permalink
   validates_presence_of :permalink
   validates :amazon_echo_url, url: {allow_blank: true}

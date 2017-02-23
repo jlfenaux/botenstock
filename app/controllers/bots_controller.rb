@@ -80,7 +80,7 @@ class BotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bot_params
-      params.require(:bot).permit(:name, :description_fr, :description_en, :logo, :website, :twitter, :facebook, :tagline_en, :tagline_fr, :product_hunt_url, :venture_beat_url, :amazon_echo_url, :android_url, :discord_url, :email_url, :imessage_url, :ios_url, :kik_url, :messenger_url, :skype_url, :slack_url, :sms_url, :telegram_url, :twitter_url, :web_url, categories: [], languages: [], platforms_attributes: [:url, :id])
+      params.require(:bot).permit(:name, :description_fr, :description_en, :logo, :website, :twitter, :facebook, :tagline_en, :tagline_fr, :product_hunt_url, :venture_beat_url, :amazon_echo_url, :android_url, :discord_url, :email_url, :imessage_url, :ios_url, :kik_url, :messenger_url, :skype_url, :slack_url, :sms_url, :telegram_url, :twitter_url, :web_url, categories: [], languages: [], platforms_attributes: [:url, :provider_id, :id])
     end
 
     def add_platforms
