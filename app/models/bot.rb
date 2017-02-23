@@ -59,6 +59,9 @@ class Bot < ApplicationRecord
     id = Provider.where(code: platform).first
     self.platforms.select{|p| p.provider_id == id}.first.url
   end
+  def visible_platforms
+    platforms.visible
+  end
 
   def tagline
     send("tagline_#{I18n.locale}")

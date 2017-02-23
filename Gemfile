@@ -24,6 +24,8 @@ gem 'chartkick'
 gem 'redcarpet'
 gem 'dropzonejs-rails'
 gem 'rollbar'
+gem 'meta-tags'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri

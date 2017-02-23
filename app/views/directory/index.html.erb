@@ -9,9 +9,11 @@
         <div class="col-md-9 no-padding">
           <div class='index-header'>
             <h1><%=@title%></h1>
+            <p><%=@description%></p>
+            <%= debug @bots.public_methods - Object.methods%>
           </div>
 
-            <%= render partial: 'bot', collection: @bots %>
+          <%= render partial: 'bot', collection: @bots %>
 
           <div class='row clearfix col-sm-12 text-center'>
           <br>

@@ -23,8 +23,8 @@ class Directory
     end
   end
 
-  def path
-    Rails.application.routes.url_helpers.directory_path(platform: platform_slug, language: language_slug, category: category_slug)
+  def path(page = nil)
+    Rails.application.routes.url_helpers.directory_path(platform: platform_slug, language: language_slug, category: category_slug, page: page)
   end
 
 
