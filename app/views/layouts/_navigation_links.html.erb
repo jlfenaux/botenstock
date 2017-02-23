@@ -1,7 +1,7 @@
 <%# add navigation links to this file %>
 
 <li>
-  <%= link_to 'Blog', blog_path%>
+  <%= link_to 'Blog', blog_path if current_user && current_user.has_role?(:admin)%>
 </li>
 <li>
   <%= link_to 'Admin', admin_path if current_user && current_user.has_role?(:admin)%>

@@ -41,7 +41,7 @@ class DirectoryController < ApplicationController
       @bot.visible_platforms.map(&:provider).map(&:name) +
       @bot.categories.map{|category| I18n.t("category.list.#{category}")}
 
-    @@translated_links = {}
+    @translated_links = {}
     @translated_links[:en] = bot_page_en_path(@bot.permalink) if I18n.locale != :en
     @translated_links[:fr] = bot_page_fr_path(@bot.permalink) if I18n.locale != :fr
 

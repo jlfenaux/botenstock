@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
   localized do
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
     resources :photos, only: [:index, :create, :destroy]

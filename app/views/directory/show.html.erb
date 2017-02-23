@@ -50,14 +50,16 @@
               <%= link_to image_tag(p.provider.icon.url(:thumb)), p.url, target:'_platform'%>
             <%end%>
           </div>
+          <% if current_user && current_user.has_role?(:admin)%>
           <p>
             <strong>Date de création:</strong> <%= I18n.l @bot.created_at.to_date%><br>
             <strong>Date de dernière mise à jour:</strong> <%= I18n.l @bot.updated_at.to_date%>
           </p>
+          <%end%>
 
           <div class='button-bar'>
             <%= link_to I18n.t('edit'), edit_bot_path(@bot) , class:'btn btn-default' if current_user && current_user.has_role?(:admin) %>
-            <%= link_to I18n.t('add_bot'), new_bot_path(), class:'btn btn-default' %>
+            <%= link_to I18n.t('add_bot'), new_bot_path(), class:'btn btn-default' if current_user && current_user.has_role?(:admin) %>
             <%= link_to I18n.t('return'), :back, class:'btn btn-default' %>
           </div>
         </div>
