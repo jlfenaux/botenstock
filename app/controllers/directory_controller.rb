@@ -30,21 +30,6 @@ class DirectoryController < ApplicationController
     @translated_link_fr = Directory.new(platform: @platform, category: @category ,language: @language, locale: :fr).path(@bots.current_page)
   end
 
-  def index_description
-    case I18n.locale
-      when :en
-        text = "Discover all bots"
-        text += %( in the #{I18n.t("category.list.#{@category}")} category) unless @category == :all
-        text += %( on the #{@platform.name} platform) unless @platform == :all
-
-      when :fr
-        text = "Découvrez tous les bots"
-        text += %( de la catégorie #{I18n.t("category.list.#{@category}")}) unless @category == :all
-        text += %( sur la plateforme #{@platform.name}) unless @platform == :all
-    end
-    text
-  end
-
   def show
     @bot = Bot.where(permalink: params[:permalink]).includes(platforms: :provider).first
 
@@ -74,5 +59,20 @@ class DirectoryController < ApplicationController
       return :all if params[:language].blank?
       return :all if params[:language] == I18n.t('language.all_slug', locale: I18n.locale)
       I18n.t('language.list', locale: I18n.locale).invert[params[:language]]
+    end
+
+    def index_description
+      case I18n.locale
+        when :en
+          text = "Discover all bots"
+          text += %( in the #{I18n.t("category.list.#{@category}")} category) unless @category == :all
+          text += %( on the #{@platform.name} platform) unless @platform == :all
+
+        when :fr
+          text = "Découvrez tous les bots"
+          text += %( de la catégorie #{I18n.t("category.list.#{@category}")}) unless @category == :all
+          text += %( sur la plateforme #{@platform.name}) unless @platform == :all
+      end
+      text
     end
 end
