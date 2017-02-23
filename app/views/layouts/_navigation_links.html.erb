@@ -8,10 +8,10 @@
 </li>
 <li>
   <% if I18n.locale == :fr %>
-    <%= link_to "English", @translated_link_en || root_en_path() %>
+    <%= link_to "English", (@translated_links && @translated_links[:en]) || root_en_path() %>
 
   <% else %>
-    <%= link_to "Français", @translated_link_fr || root_fr_path() %>
+    <%= link_to "Français", (@translated_links && @translated_links[:fr]) || root_fr_path() %>
 
   <%end%>
 </li>

@@ -26,8 +26,10 @@ class DirectoryController < ApplicationController
     set_meta_tags description: index_description
     set_meta_tags prev: Directory.new(platform: @platform, category: @category ,language: @language).path(@bots.previous_page) unless @bots.previous_page.nil?
     set_meta_tags next: Directory.new(platform: @platform, category: @category ,language: @language).path(@bots.next_page) unless @bots.next_page.nil?
-    @translated_link_en = Directory.new(platform: @platform, category: @category ,language: @language, locale: :en).path(@bots.current_page)
-    @translated_link_fr = Directory.new(platform: @platform, category: @category ,language: @language, locale: :fr).path(@bots.current_page)
+    @translated_links = {}
+    @translated_links[:en] = Directory.new(platform: @platform, category: @category ,language: @language, locale: :en).path(@bots.current_page) if I18n.locale != :en
+    @translated_links[:fr] = Directory.new(platform: @platform, category: @category ,language: @language, locale: :fr).path(@bots.current_page) if I18n.locale != :fr
+    set_meta_tags alternate: @translated_links
   end
 
   def show
@@ -39,8 +41,9 @@ class DirectoryController < ApplicationController
       @bot.visible_platforms.map(&:provider).map(&:name) +
       @bot.categories.map{|category| I18n.t("category.list.#{category}")}
 
-    @translated_link_en = bot_page_en_path(@bot.permalink)
-    @translated_link_fr = bot_page_fr_path(@bot.permalink)
+    @@translated_links = {}
+    @translated_links[:en] = bot_page_en_path(@bot.permalink) if I18n.locale != :en
+    @translated_links[:fr] = bot_page_fr_path(@bot.permalink) if I18n.locale != :fr
 
   end
 

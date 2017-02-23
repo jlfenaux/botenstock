@@ -27,9 +27,9 @@ class Directory
   def path(page = nil)
     case @locale
     when :en
-      Rails.application.routes.url_helpers.directory_en_path(platform: platform_slug, language: language_slug, category: category_slug, page: page)
+      Rails.application.routes.url_helpers.directory_en_path(platform: platform_slug, language: language_slug, category: category_slug, page: (page && page > 1) ? page : nil )
     when :fr
-      Rails.application.routes.url_helpers.directory_fr_path(platform: platform_slug, language: language_slug, category: category_slug, page: page)
+      Rails.application.routes.url_helpers.directory_fr_path(platform: platform_slug, language: language_slug, category: category_slug, page:  (page && page > 1) ? page : nil)
     end
 
   end
