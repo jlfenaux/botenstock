@@ -26,6 +26,8 @@ class DirectoryController < ApplicationController
     set_meta_tags description: index_description
     set_meta_tags prev: Directory.new(platform: @platform, category: @category ,language: @language).path(@bots.previous_page) unless @bots.previous_page.nil?
     set_meta_tags next: Directory.new(platform: @platform, category: @category ,language: @language).path(@bots.next_page) unless @bots.next_page.nil?
+    @translated_link_en = Directory.new(platform: @platform, category: @category ,language: @language, locale: :en).path(@bots.current_page)
+    @translated_link_fr = Directory.new(platform: @platform, category: @category ,language: @language, locale: :fr).path(@bots.current_page)
   end
 
   def index_description
@@ -51,6 +53,10 @@ class DirectoryController < ApplicationController
     set_meta_tags keywords: ['bot', 'chatbot'] +
       @bot.visible_platforms.map(&:provider).map(&:name) +
       @bot.categories.map{|category| I18n.t("category.list.#{category}")}
+
+    @translated_link_en = bot_page_en_path(@bot.permalink)
+    @translated_link_fr = bot_page_fr_path(@bot.permalink)
+
   end
 
   private
