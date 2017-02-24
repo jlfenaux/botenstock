@@ -1,0 +1,10 @@
+<% Provider.visible.sorted.each do |provider|%>
+  <div class="media" style='margin-left: 30px;'>
+    <a href="<%= Directory.new(platform: provider).path%>" class='media-left pull-left'>
+      <%= image_tag provider.icon.url(:thumb) , class:'media-object', alt: provider.name%>
+    </a>
+    <div class="media-body">
+      <h5 class="media-heading"><%=provider.name%></h5>
+    </div>
+  </div>
+<%end%>
