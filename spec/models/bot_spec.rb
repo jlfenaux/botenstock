@@ -36,6 +36,9 @@
 #  web_url           :string
 #  tagline_en        :string
 #  description_en    :text
+#  tested_on         :date
+#  test_en           :text
+#  test_fr           :text
 #
 
 require 'rails_helper'

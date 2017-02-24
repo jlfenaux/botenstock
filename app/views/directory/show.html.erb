@@ -50,6 +50,12 @@
               <%= link_to image_tag(p.provider.icon.url(:thumb)), p.url, target:'_platform'%>
             <%end%>
           </div>
+
+          <% if @bot.tested_on && @bot.tested_on <= Date.today %>
+            <h3><%=I18n.t("bot_page.our_opinion")%></h3>
+            <%= @bot.send("test_#{I18n.locale}")%>
+          <%end%>
+
           <% if current_user && current_user.has_role?(:admin)%>
           <p>
             <strong>Date de création:</strong> <%= I18n.l @bot.created_at.to_date%><br>
