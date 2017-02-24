@@ -3,8 +3,15 @@
 
 <div class='container bg-white'>
   <div class='col-sm-12'>
-    <%= image_tag "big-logo.png"%>
-    <br>
-    <%= render 'presentation'%>
+    <div class='col-md-8'>
+      <%= directory_link image_tag("big-logo.png")%>
+      <%= render 'presentation' %>
+    </div>
+
+    <sidebar class='col-md-4 homepage' >
+      <%= render 'what_is_a_bot' %>
+      <%= render partial: 'recently_added_bots' , locals:{title: I18n.t('homepage.recently_added_bots')}%>
+
+    </sidebar>
   </div>
 </div>
