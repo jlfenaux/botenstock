@@ -3,7 +3,10 @@
   <table class='table table-hover table-condensed table-striped'>
     <thead>
       <tr>
-        <th colspan=3><%=I18n.t('simple_form.labels.provider.name')%></th>
+        <th colspan=2><%=I18n.t('simple_form.labels.provider.name')%></th>
+        <th>Visible</th>
+        <th>Featured</th>
+        <th>Order</th>
       </tr>
     </thead>
     <tbody>
@@ -12,9 +15,15 @@
           <td width='50px'><%= image_tag provider.icon.url(:thumb)%></td><td style='vertical-align:middle;'><%=link_to provider.name, edit_provider_path(provider)%></td>
           <td>
             <%if provider.visible%>
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             <%end%>
           </td>
+          <td>
+            <%if provider.featured%>
+              <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            <%end%>
+          </td>
+          <td><%= provider.order%></td>
         </tr>
       <%end%>
     </tbody>
