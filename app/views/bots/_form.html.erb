@@ -13,6 +13,11 @@
 
     <%= f.error_notification %>
     <%= f.input :name %>
+    <%= f.input :status,
+        collection: Bot::STATUSES ,
+        label_method: ->(obj){ t("category.list.#{obj}") },
+        input_html: { class: 'col-md-4' }
+    %>
     <h3>Taglines</h3>
     <%= f.input :tagline_en %>
     <%= f.input :tagline_fr %>

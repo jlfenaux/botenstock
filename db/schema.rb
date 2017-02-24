@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224142143) do
+ActiveRecord::Schema.define(version: 20170224174152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20170224142143) do
     t.string   "website"
     t.string   "twitter"
     t.string   "facebook"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "categories",                     array: true
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "categories",                                         array: true
     t.string   "permalink"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170224142143) do
     t.string   "tagline_fr"
     t.string   "product_hunt_url"
     t.string   "venture_beat_url"
-    t.string   "languages",                      array: true
+    t.string   "languages",                                          array: true
     t.string   "amazon_echo_url"
     t.string   "android_url"
     t.string   "discord_url"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170224142143) do
     t.date     "tested_on"
     t.text     "test_en"
     t.text     "test_fr"
+    t.string   "status",            default: "pending"
     t.index "to_tsvector('french'::regconfig, (((name)::text || ' '::text) || description_fr))", name: "bot_search_idx", using: :gin
     t.index ["categories"], name: "index_bots_on_categories", using: :gin
     t.index ["permalink"], name: "index_bots_on_permalink", using: :btree

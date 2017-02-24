@@ -14,7 +14,7 @@ class DirectoryController < ApplicationController
 
     @title = @title.empty? ? I18n.t('default_title') : @title.compact.join(' / ')
     @description = index_description
-    @bots = Bot.all
+    @bots = Bot.ok
     @bots = @bots.where(" ? = ANY(categories)", @category) unless [nil, :all].include? @category
     @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", @platform.id) unless @platform == :all
     @bots = @bots.where(" ? = ANY(languages)", @language) unless [nil, :all].include? @language

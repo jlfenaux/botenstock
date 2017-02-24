@@ -70,6 +70,9 @@ class Bot < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_for, against: %i(name description_en tagline_en description_fr tagline_fr)
+  scope :ok, -> { where(status: 'ok')}
+
+  STATUSES = ['ok', 'pending', 'to_be_checked']
 
   CATEGORIES = [
     'Actualités',

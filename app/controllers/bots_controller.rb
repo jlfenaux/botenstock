@@ -82,6 +82,7 @@ class BotsController < ApplicationController
     def bot_params
       params.require(:bot).permit(
         :name,
+        :status,
         :description_fr,
         :description_en,
         :tested_on,

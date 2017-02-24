@@ -59,7 +59,8 @@
           <% if current_user && current_user.has_role?(:admin)%>
           <p>
             <strong>Date de création:</strong> <%= I18n.l @bot.created_at.to_date%><br>
-            <strong>Date de dernière mise à jour:</strong> <%= I18n.l @bot.updated_at.to_date%>
+            <strong>Date de dernière mise à jour:</strong> <%= I18n.l @bot.updated_at.to_date%><br>
+            <strong>Status:</strong> <%= @bot.status%>
           </p>
           <%end%>
 
