@@ -24,6 +24,7 @@ class BotsController < ApplicationController
   # GET /bots/new
   def new
     @bot = Bot.new
+    @bot.status = 'ok' if current_user.has_role?('admin')
     add_platforms
   end
 
