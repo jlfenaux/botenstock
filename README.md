@@ -18,16 +18,25 @@
 # 2017/02/23 jeudi
 
 * [x] Mise en place du nouveau logo
+* [x] Ajouter les Meta tags pour le SEO
+* [x] Ajout du robot dans le header
+
+# 2017/02/24 vendredi
+
+* [x]Créer une page Facebook
+* [x] Gérer un statut pour les bots (ok, à valider, spam, supprimé)
+* [x] Nouvelle homepage plus complète
+* [x] Gère un ordre d'affichage pour les plateformes
+* [x] Gère les métatags pour la homepage
+* [x] Permet de régiger des tests (BFC) pour chaque bot
 
 # Todo list
 
-
 * [ ] Permettre la sélection des bots éditorialisés (langue / bot_id / Date début / date fin)
-* [ ] Créer une page Facebook et un compte twitter pour le site
-* [ ] Gérer un statut pour les bots (ok, à valider, spam, supprimé)
+* [ ] Créer un compte twitter pour le site
 * [ ] Ajouter des commentaires sur les bots
 * [ ] Ajouter une note (thumb up / down)
-* [ ] Ajouter les Meta tags pour le SEO
+
 * [ ] Ajouter un sitemap generator
 
 
