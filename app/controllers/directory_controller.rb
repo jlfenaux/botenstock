@@ -20,6 +20,7 @@ class DirectoryController < ApplicationController
     @bots = @bots.where(" ? = ANY(languages)", @language) unless [nil, :all].include? @language
     @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
     @bots = @bots.includes(platforms: :provider)
+    @bots = @bots.order("created_at desc")
     @bots = @bots.paginate(:page => params[:page], :per_page => 10)
 
     set_meta_tags title: @title
