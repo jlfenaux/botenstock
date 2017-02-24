@@ -65,6 +65,8 @@ en:
   sure?: Are you sure?
   search: Search
   search_placeholder: Search for...
+  homepage:
+    recently_added_bots: Recenty added bots
   post:
     one: post
     other: posts

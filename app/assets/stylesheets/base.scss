@@ -101,3 +101,13 @@ h4 {
 .btn-primary:visited {
   color: white;
 }
+
+sidebar.homepage {
+  padding:0;
+  .block {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #eee;
+  }
+}
+

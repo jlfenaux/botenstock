@@ -47,6 +47,9 @@ fr:
   show: Afficher
   search: Rechercher
   search_placeholder: Rechercher...
+  homepage:
+    recently_added_bots: Bots récemment ajoutés
+
   post:
     one: article
     other: articles
