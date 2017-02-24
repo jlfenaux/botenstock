@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: platforms
+#
+#  id          :integer          not null, primary key
+#  bot_id      :integer
+#  provider_id :integer
+#  url         :string
+#
+
 class Platform < ApplicationRecord
   belongs_to :bot
   belongs_to :provider

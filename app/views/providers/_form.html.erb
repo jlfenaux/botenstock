@@ -11,6 +11,8 @@
   <%= f.input :code %>
   <%= f.input :icon, as: :file %>
   <%= f.input :visible, as: :boolean%>
+  <%= f.input :order, as: :integer%>
+  <%= f.input :featured, as: :boolean%>
 
   <h3>Descriptions</h3>
   <%= f.input :description_en, input_html: {rows: 5 }%>

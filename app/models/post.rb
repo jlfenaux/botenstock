@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id           :integer          not null, primary key
+#  title        :string
+#  body         :text
+#  permalink    :string
+#  language     :string
+#  published_at :datetime
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  summary      :text
+#  photo_id     :integer
+#
+
 class Post < ApplicationRecord
   before_validation :create_permalink
   validates_uniqueness_of :permalink

@@ -6,8 +6,8 @@ $brand-primary: #7092BE;
 $btn-primary-color: white;
 $btn-primary-bg: $brand-primary;
 $btn-primary-border: $brand-primary;
-$brand-secondary: #BDDFFF;
-
+$brand-secondary: #F6A623;
+$brand-success: #BDDFFF;
 $navbar-default-color: #fff;
 
 $hover-color: #BDDFFF;
@@ -25,6 +25,11 @@ $navbar-inverse-link-hover-color: $brand-secondary;
 @import "modern-business";
 @import "bots";
 
+
+.alert-success {
+  background-color: $brand-success;
+  color: $brand-primary;
+}
 
 
 body {
@@ -77,6 +82,11 @@ section {
 
 h1 {
   color: $gray-darker;
+  // color: $brand-secondary;
+}
+
+.btn-secondary {
+  color: white;
 }
 
 h4 {
