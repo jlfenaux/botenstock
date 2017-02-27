@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :photos, only: [:index, :create, :destroy]
     get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', as: 'directory'
     resources :providers, :bots, :posts
+    get 'logos' => 'bots#logos'
     post 'posts/preview' => 'posts#preview', as: 'post_preview'
     get 'admin' => "admin#index", as: 'admin'
     get 'blog/:permalink' => 'blog#show', as: 'blog_article'

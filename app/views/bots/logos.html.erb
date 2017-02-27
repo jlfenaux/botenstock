@@ -1,0 +1,8 @@
+<h1>Logos</h1>
+<%@bots.each do |bot|%>
+<div style='float: left; width: 105px; height: 105px;'>
+  <a href="<%= edit_bot_path(bot)%>">
+    <%= image_tag bot.logo.url(:thumb) , class:'img-rounded', alt: bot.name%>
+  </a>
+</div>
+<%end%>

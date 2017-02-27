@@ -3,6 +3,11 @@ class BotsController < ApplicationController
   before_action :check_if_admin
   before_action :set_bot, only: [:show, :edit, :update, :destroy]
   layout "admin"
+
+  def logos
+    @bots = Bot.all.order('created_at desc')
+  end
+
   # GET /bots
   # GET /bots.json
   def index
