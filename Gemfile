@@ -10,7 +10,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'aws-sdk', '~> 2.3.0'
 gem "paperclip", "~> 5.0.0"
@@ -25,6 +24,7 @@ gem 'redcarpet'
 gem 'dropzonejs-rails'
 gem 'rollbar'
 gem 'meta-tags'
+gem 'sitemap_generator'
 
 
 group :development, :test do
