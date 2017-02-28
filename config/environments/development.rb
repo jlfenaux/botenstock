@@ -56,8 +56,8 @@ Rails.application.configure do
     storage: :s3,
     s3_credentials: {
       bucket: 'botenstock',
-      access_key_id: 'AKIAJ5YNQRR4UQZY4WWA',
-      secret_access_key: "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",
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
       s3_region: 'eu-west-1'
     }
   }

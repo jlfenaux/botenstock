@@ -25,10 +25,13 @@ gem 'dropzonejs-rails'
 gem 'rollbar'
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'fog'
 
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'dotenv-rails'
+
 end
 group :development do
   gem 'web-console', '>= 3.3.0'

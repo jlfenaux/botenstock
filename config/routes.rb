@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get "sitemap.xml.gz" => "sitemaps#sitemap", format: :xml, as: :sitemap
+
   localized do
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
     resources :photos, only: [:index, :create, :destroy]
