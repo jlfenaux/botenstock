@@ -36,6 +36,11 @@
           Photos
           <span class="badge"><%=Photo.count%></span>
         </a>
+        <a href="<%=contacts_path()%>">
+          Contacts
+          <span class="badge"><%=Contact.pending.count%></span>
+        </a>
+
         <a href="<%=logos_path()%>">
           Logos
         </a>

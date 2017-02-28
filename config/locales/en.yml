@@ -22,6 +22,11 @@
 en:
   simple_form:
     labels:
+      contact:
+        name: Name
+        email: Email
+        object: Object
+        question: Question
       post:
         title: Title
         body: Body
@@ -120,3 +125,10 @@ en:
     available_languages: Available in
     official_website: Official website
     our_opinion: Our take on the bot
+  directory:
+    no_bot: No bot corresponds to your criteria.
+  contact:
+    sent: Your email has been sent. Thank you.
+    objects:
+      1: Submit a new bot
+      2: Other

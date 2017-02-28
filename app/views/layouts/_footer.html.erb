@@ -1,9 +1,12 @@
 <!-- Footer -->
-<footer class="container">
-  <div class="row">
-      <div class="col-lg-12 text-center">
-          <p>Made with <span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span> in Paris by Bots for Chatting</p>
-      </div>
+<footer class="bg-white">
+  <div class="container">
+    <div class="col-sm-12 text-center">
+      <p>
+        <%= link_to 'Contact', new_contact_path%> | <%= link_to 'Blog', blog_path if current_user && current_user.has_role?(:admin)%> | <a href='https://www.facebook.com/botsforchatting'>Facebook</a>
+      </p>
+      <p>Made with <span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span> in Paris by Bots for Chatting</p>
+    </div>
   </div>
 </footer>
 

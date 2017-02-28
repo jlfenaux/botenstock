@@ -25,12 +25,15 @@ $navbar-inverse-link-hover-color: $brand-secondary;
 @import "modern-business";
 @import "bots";
 
-
 .alert-success {
   background-color: $brand-success;
   color: $brand-primary;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
   background-color: #eee;
@@ -82,7 +85,6 @@ section {
 
 h1 {
   color: $gray-darker;
-  // color: $brand-secondary;
 }
 
 .btn-secondary {
@@ -100,6 +102,19 @@ h4 {
 
 .btn-primary:visited {
   color: white;
+}
+
+
+body > footer {
+  border-top: 1px solid #e6e6e6;
+  margin-top: 80px;
+  margin-bottom: 0;
+  a {
+    color: black;
+  }
+  .container {
+    padding: 20px 0;
+  }
 }
 
 sidebar.homepage {

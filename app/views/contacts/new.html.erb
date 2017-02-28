@@ -1,0 +1,22 @@
+<div class='container bg-white'>
+  <h1>Contact</h1>
+
+  <%= simple_form_for(@contact, html: { class: 'form-horizontal ' },
+    wrapper: :horizontal_form,
+    wrapper_mappings: {
+      check_boxes: :horizontal_radio_and_checkboxes,
+      radio_buttons: :horizontal_radio_and_checkboxes,
+      file: :horizontal_file_input,
+      boolean: :horizontal_boolean
+    }) do |f| %>
+
+    <%= f.input :name %>
+    <%= f.input :email, placeholder: 'ben@example.com' , type: :email%>
+    <%= f.input :object, collection: Contact.objects  %>
+    <%= f.input :question, input_html: {rows: 5 } %>
+    <%= f.hidden_field :language %>
+    <div class="button-bar text-right">
+      <%= f.button :submit , value: I18n.t('save'), class: 'btn-primary '%>
+      </div>
+  <%end%>
+</div>

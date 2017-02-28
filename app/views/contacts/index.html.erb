@@ -1,0 +1,11 @@
+<h1>Contacts</h1>
+<%@contacts.each do |contact|%>
+ <div class='card col-md-12' id='contact-<%=contact.id%>'>
+  <blockquote>
+    <p><b><%=I18n.t('contact.objects')[contact.object]%></b></p>
+    <p><%=contact.question%></p>
+    <footer><cite><%= contact.name%> (<%= contact.email%>) - <%= I18n.l(contact.created_at)%></cite></footer>
+  </blockquote>
+  <%= link_to 'Traité',completed_contact_path(contact.id),remote: true, method: :put, class:'btn btn-danger pull-right' %>
+ </div>
+<%end%>

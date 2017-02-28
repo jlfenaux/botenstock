@@ -23,12 +23,21 @@
 
 # 2017/02/24 vendredi
 
-* [x]Créer une page Facebook
+* [x] Créer une page Facebook
 * [x] Gérer un statut pour les bots (ok, à valider, spam, supprimé)
 * [x] Nouvelle homepage plus complète
 * [x] Gère un ordre d'affichage pour les plateformes
 * [x] Gère les métatags pour la homepage
 * [x] Permet de régiger des tests (BFC) pour chaque bot
+
+# 2017/02/27 lundi
+
+* [x] Corrige la sélection des bots dans l'annuaire. Les plateformes doivent avoir une url pour être valides.
+
+# 2017/02/28 mardi
+
+* [x] Gère le cas où aucun bot ne correspond au critères de sélection.
+* [x] Ajoute une page pour les contacts
 
 # Todo list
 

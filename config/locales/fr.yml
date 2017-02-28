@@ -2,6 +2,11 @@
 fr:
   simple_form:
     labels:
+      contact:
+        name: Nom
+        email: Email
+        object: Objet
+        question: Question
       post:
         title: Titre
         body: Contenu
@@ -102,6 +107,13 @@ fr:
     present_on_platforms: Je le veux tout de suite !
     official_website: Site web Officiel
     our_opinion: Notre avis sur le bot
+  directory:
+    no_bot: Aucun bot ne correspond à vos critères.
+  contact:
+    sent: Votre email a été envoyé. Merci.
+    objects:
+      1: Soumettre un nouveau bot
+      2: Autre
 
   will_paginate:
     previous_label: "&#8592; "
