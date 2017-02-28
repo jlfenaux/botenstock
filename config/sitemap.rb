@@ -16,7 +16,6 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(fog_provider
 
 SitemapGenerator::Sitemap.create do
 [:en, :fr].each do |lang|
-    p lang
     add send("root_#{lang}_path"), changefreq: 'daily'
     Bot::CATEGORIES.each do |cat|
       Provider.visible.each do |platform|
