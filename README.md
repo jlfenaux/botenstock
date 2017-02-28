@@ -38,7 +38,8 @@
 
 * [x] Gère le cas où aucun bot ne correspond au critères de sélection.
 * [x] Ajoute une page pour les contacts
-
+* [x] Ajouter un sitemap generator
+*
 # Todo list
 
 * [ ] Permettre la sélection des bots éditorialisés (langue / bot_id / Date début / date fin)
@@ -46,7 +47,7 @@
 * [ ] Ajouter des commentaires sur les bots
 * [ ] Ajouter une note (thumb up / down)
 
-* [ ] Ajouter un sitemap generator
+
 
 
 
