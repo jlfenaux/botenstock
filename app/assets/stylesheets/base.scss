@@ -117,12 +117,19 @@ body > footer {
   }
 }
 
-sidebar.homepage {
+.homepage {
+  padding: 0;
+  .col-sm-12 {
+    padding-right: 20px;
+  }
+}
+.homepage sidebar{
   padding:0;
   .block {
     padding: 5px;
-    margin-bottom: 10px;
-    background-color: #eee;
+    margin-bottom: 20px;
+    background-color: lighten($brand-secondary, 40);
+
   }
 }
 
