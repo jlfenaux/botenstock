@@ -125,11 +125,16 @@ body > footer {
 }
 .homepage sidebar{
   padding:0;
+
   .block {
     padding: 5px;
+    padding-left: 20px;
+    border-left: 5px solid $brand-secondary;
     margin-bottom: 20px;
-    background-color: lighten($brand-secondary, 40);
+  }
 
+  h4 {
+    margin-top: 0;
   }
 }
 
