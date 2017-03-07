@@ -1,8 +1,10 @@
-<div class='row' style='margin-bottom: 40px'>
+<div class='row' style='margin-bottom: 40px' >
   <% Provider.visible.sorted.each do |provider|%>
     <div class='col-sm-6' style='height: 40px;'>
+    <a href='<%=Directory.new(platform: provider).path%>' class='black' >
       <%= image_tag provider.icon.url(:thumb) , class:'pull-left', alt: provider.name, style: 'margin-right: 20px'%>
       <h5><%=provider.name%></h5>
+      </a>
     </div>
   <%end%>
 </div>
