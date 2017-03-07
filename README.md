@@ -39,7 +39,12 @@
 * [x] Gère le cas où aucun bot ne correspond au critères de sélection.
 * [x] Ajoute une page pour les contacts
 * [x] Ajouter un sitemap generator
-*
+
+# 2017/03/07 mardi
+* [x] Ajoute des liens sur la liste des plateformes de la homepage
+* [x] Utilise une ancre pour la pagination de l'annuaire (améliore l'usage sur mobile)
+
+
 # Todo list
 
 * [ ] Permettre la sélection des bots éditorialisés (langue / bot_id / Date début / date fin)
