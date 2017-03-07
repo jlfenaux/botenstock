@@ -125,6 +125,10 @@ en:
     available_languages: Available in
     official_website: Official website
     our_opinion: Our take on the bot
+  will_paginate:
+    previous_label: "&#8592; "
+    next_label: " &#8594;"
+    page_gap: "&hellip;"
   directory:
     no_bot: No bot corresponds to your criteria.
   contact:
