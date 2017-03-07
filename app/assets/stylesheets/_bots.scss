@@ -88,18 +88,24 @@
 
 
 .card {
+  display: flex;
+  align-items: flex-start;
   padding: 10px;
-  // max-height: 150px;
-  min-height: 150px;
+  // min-height: 150px;
   background-color: #fff;
   margin-bottom: 4px;
   img {
-    margin-right: 10px;
+    margin-right: 1em;
+  }
+  .body {
+    flex: 1;
   }
 }
+
 .card:hover {
   background-color: $hover-color;
   color: black;
+  text-decoration: none;
 }
 
 .bot_categories, .bot_languages {

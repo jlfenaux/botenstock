@@ -1,9 +1,6 @@
-<a href="<%= bot_page_path(bot.permalink)%>">
-  <div class='card col-md-12'>
-    <div class='pull-left'>
-      <%= image_tag bot.logo.url(:thumb) , class:'img-rounded', alt: bot.name%>
-    </div>
-    <div>
+<a href="<%= bot_page_path(bot.permalink)%>" class='card col-md-12'>
+    <%= image_tag bot.logo.url(:thumb) , class:'img-rounded', alt: bot.name%>
+    <div class='body'>
       <h4 class="media-heading"><%= bot.name%></h4>
       <div class='tagline'><%=bot.tagline%></div>
       <% unless bot.categories.nil?%>
@@ -13,5 +10,5 @@
         <%= bot.platforms.visible.map{|p| "<span class='label label-default'>#{p.provider.name}</span>"}.join(' ').html_safe %><br>
       <%end%>
       </div>
-  </div>
+
 </a>
