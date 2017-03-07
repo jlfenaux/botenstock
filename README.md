@@ -43,6 +43,9 @@
 # 2017/03/07 mardi
 * [x] Ajoute des liens sur la liste des plateformes de la homepage
 * [x] Utilise une ancre pour la pagination de l'annuaire (améliore l'usage sur mobile)
+* [x] Simplifie la Card en  utilisant flex
+* [x] La pagination de l'annuaire est simplifiée
+* [x] Ajoute les Favicons
 
 
 # Todo list
