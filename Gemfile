@@ -16,7 +16,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'pg_search'
 gem 'devise'
 gem "validate_url"
-gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 gem 'route_translator'
 gem 'groupdate'
 gem 'chartkick'

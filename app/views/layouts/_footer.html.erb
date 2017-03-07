@@ -3,7 +3,7 @@
   <div class="container">
     <div class="col-sm-12 text-center">
       <p>
-        <%= link_to 'Contact', new_contact_path%> | <%= link_to 'Blog', blog_path if current_user && current_user.has_role?(:admin)%> | <a href='https://www.facebook.com/botsforchatting'>Facebook</a>
+        <%= link_to 'Contact', new_contact_path%> | <%= link_to 'Blog', blog_path if current_user && current_user.has_role?(:admin)%> | <a href='https://www.facebook.com/botsforchatting'>Facebook</a> | <%=link_to I18n.t('add_bot'), new_bot_path if current_user && current_user.has_role?(:admin)%>
       </p>
       <p>Made with <span class="glyphicon glyphicon-heart text-danger" aria-hidden="true"></span> in Paris by Bots for Chatting</p>
     </div>

@@ -20,9 +20,7 @@
           <%end%>
 
           <div class='row clearfix col-sm-12 text-center'>
-          <br>
-            <%= will_paginate @bots, class:'apple_pagination', params: {anchor: 'list-top'} %>
-            <%=link_to I18n.t('add_bot'), new_bot_path, class: 'btn btn-primary' if current_user && current_user.has_role?(:admin)%>
+            <%= will_paginate @bots, params: {anchor: 'list-top'}, renderer: BootstrapPagination::Rails %>
           </div>
         </div>
     </div>
