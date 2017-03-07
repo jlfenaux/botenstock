@@ -20,7 +20,7 @@
           <%end%>
 
           <div class='row clearfix col-sm-12 text-center'>
-            <%= will_paginate @bots, params: {anchor: 'list-top'}, renderer: BootstrapPagination::Rails %>
+            <%= will_paginate @bots, params: {anchor: 'list-top'}, renderer: BootstrapPagination::Rails , inner_window: 0, outer_window: 0%>
           </div>
         </div>
     </div>
