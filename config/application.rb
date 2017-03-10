@@ -26,7 +26,7 @@ module Botenstock
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:en, :fr]
 
-    config.time_zone = "Paris"
-    config.active_record.default_timezone = :local
+    config.time_zone = "UTC"
+    config.active_record.default_timezone = :utc
   end
 end
