@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  document.addEventListener("turbolinks:load", function() {
     if ($(".dropzone").length > 0) {
     // disable auto discover
     Dropzone.autoDiscover = false;
@@ -14,6 +13,5 @@ $(document).ready(function(){
       $.getScript("/photos")
     })
   }
-  })
 
 });
