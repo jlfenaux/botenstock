@@ -1,0 +1,8 @@
+<div class='row post_summary'>
+  <div class='col-md-3'><%=link_to  image_tag(post.photo.file(:medium)), blog_article_path(permalink: post.permalink)%></div>
+  <div class='col-md-9'>
+    <h2><%=link_to post.title, blog_article_path(permalink: post.permalink)%></h2>
+    <div class='published'><%= post.published%></div>
+    <%=post.summary%>
+  </div>
+</div>

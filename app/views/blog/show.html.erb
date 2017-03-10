@@ -1,4 +1,9 @@
 <div class="container bg-white ">
+<% if @post.published_at.nil?%>
+<h2>Preview</h2>
+<%= render partial: 'post', locals: {post: @post} %>
+<%end%>
+<hr>
   <h1><%=@post.title%></h1>
   <p><%=@post.published%></p>
   <div><%=@post.html%></div>

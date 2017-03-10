@@ -1,14 +1,7 @@
 <div class="container bg-white ">
 <h1>Blog</h1>
 <% @posts.each do |post|%>
-<div class='row post_summary'>
-  <div class='col-md-3'><%=link_to  image_tag(post.photo.file(:medium)), blog_article_path(permalink: post.permalink)%></div>
-  <div class='col-md-9'>
-    <h2><%=link_to post.title, blog_article_path(permalink: post.permalink)%></h2>
-    <div class='published'><%=I18n.l post.published_at, format: :long%></div>
-    <%=post.summary%>
-  </div>
-</div>
+  <%= render partial: 'post', locals: {post: post} %>
 <%end%>
 
 </div>
