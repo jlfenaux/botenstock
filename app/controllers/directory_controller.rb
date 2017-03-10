@@ -35,7 +35,7 @@ class DirectoryController < ApplicationController
 
   def show
     @bot = Bot.where(permalink: params[:permalink]).includes(platforms: :provider).first
-
+    render plain: '404 Not found', status: 404  if @bot.nil?
     set_meta_tags title: @bot.name, reverse: true
     set_meta_tags description: @bot.tagline
     set_meta_tags keywords: ['bot', 'chatbot'] +

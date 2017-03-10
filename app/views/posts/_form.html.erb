@@ -10,7 +10,7 @@
     <%= f.error_notification %>
     <div class="button-bar">
       <%= f.button :submit , value: I18n.t('save'), class: 'btn-primary'%>
-      <%= link_to( I18n.t('show'), bot_page_path(permalink:@post.permalink), class:'btn btn-default' ) if @post.persisted?%>
+      <%= link_to( I18n.t('show'),blog_article_path(permalink: @post.permalink), class:'btn btn-default' ) if @post.persisted?%>
       <%= link_to I18n.t('return'), posts_path , class:'btn btn-default'%>
       <%= link_to I18n.t('delete') , post_path(post), method: :delete, class: 'btn btn-danger',data: { confirm: I18n.t('sure?') } if @post.persisted?%>
     </div>

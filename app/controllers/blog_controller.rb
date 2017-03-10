@@ -7,6 +7,6 @@ class BlogController < ApplicationController
 
   def show
     @post = Post.where(permalink: params[:permalink]).first
-
+    render plain: '404 Not found', status: 404  if @post.nil?
   end
 end
