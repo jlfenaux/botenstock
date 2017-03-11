@@ -100,10 +100,10 @@ Rails.application.configure do
     :address => "smtp-relay.sendinblue.com",
     :port => 587,
     :enable_starttls_auto => true,
-    :domain => "ahotu.com",
+    :domain => "botsforchatting.com",
     :authentication => :login,
-    :user_name => "jlfenaux@ahotu.com",
-    :password => "VpYym7OK6hjN04Bw"
+    :user_name => ENV['MAIL_USER'],
+    :password => ENV['MAIL_PASSWORD']
   }
 
 end
