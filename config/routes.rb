@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-
-  devise_for :users
-
   get "sitemap.xml.gz" => "sitemaps#sitemap", format: :xml, as: :sitemap
   get "/.well-known/acme-challenge/:id" => "homepage#letsencrypt"
   localized do
+    devise_for :users
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
     resources :photos, only: [:index, :create, :destroy]
     get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', as: 'directory'
