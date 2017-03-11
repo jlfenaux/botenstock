@@ -20,25 +20,12 @@
 #  product_hunt_url  :string
 #  venture_beat_url  :string
 #  languages         :string           is an Array
-#  amazon_echo_url   :string
-#  android_url       :string
-#  discord_url       :string
-#  email_url         :string
-#  imessage_url      :string
-#  ios_url           :string
-#  kik_url           :string
-#  messenger_url     :string
-#  skype_url         :string
-#  slack_url         :string
-#  sms_url           :string
-#  telegram_url      :string
-#  twitter_url       :string
-#  web_url           :string
 #  tagline_en        :string
 #  description_en    :text
 #  tested_on         :date
 #  test_en           :text
 #  test_fr           :text
+#  status            :string           default("pending")
 #
 
 require 'rails_helper'

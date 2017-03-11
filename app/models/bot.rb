@@ -20,25 +20,12 @@
 #  product_hunt_url  :string
 #  venture_beat_url  :string
 #  languages         :string           is an Array
-#  amazon_echo_url   :string
-#  android_url       :string
-#  discord_url       :string
-#  email_url         :string
-#  imessage_url      :string
-#  ios_url           :string
-#  kik_url           :string
-#  messenger_url     :string
-#  skype_url         :string
-#  slack_url         :string
-#  sms_url           :string
-#  telegram_url      :string
-#  twitter_url       :string
-#  web_url           :string
 #  tagline_en        :string
 #  description_en    :text
 #  tested_on         :date
 #  test_en           :text
 #  test_fr           :text
+#  status            :string           default("pending")
 #
 
 class Bot < ApplicationRecord
@@ -46,20 +33,6 @@ class Bot < ApplicationRecord
   accepts_nested_attributes_for :platforms , allow_destroy: true, reject_if: proc { |attributes| attributes['url'].blank? || attributes['provider_id'].nil?}
   validates_uniqueness_of :permalink
   validates_presence_of :permalink
-  validates :amazon_echo_url, url: {allow_blank: true}
-  validates :android_url, url: {allow_blank: true}
-  validates :discord_url, url: {allow_blank: true}
-  validates :email_url, url: {allow_blank: true}
-  validates :imessage_url, url: {allow_blank: true}
-  validates :ios_url, url: {allow_blank: true}
-  validates :kik_url, url: {allow_blank: true}
-  validates :messenger_url, url: {allow_blank: true}
-  validates :skype_url, url: {allow_blank: true}
-  validates :slack_url, url: {allow_blank: true}
-  validates :sms_url, url: {allow_blank: true}
-  validates :telegram_url, url: {allow_blank: true}
-  validates :twitter_url, url: {allow_blank: true}
-  validates :web_url, url: {allow_blank: true}
   before_validation :create_permalink
 
   has_attached_file :logo,

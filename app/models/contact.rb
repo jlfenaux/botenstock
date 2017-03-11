@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: contacts
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  email      :string
+#  object     :integer
+#  question   :text
+#  language   :string
+#  done       :boolean          default("false")
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Contact < ApplicationRecord
 
   validates_presence_of :name, :question, :email, :object
