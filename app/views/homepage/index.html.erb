@@ -5,11 +5,23 @@
   <div class='col-sm-12'>
     <div class='col-md-8'>
       <%= directory_link image_tag("big-logo.png")%>
-      <%= render 'presentation' %>
+      <div class='button-bar text-center'>
+        <%= directory_link I18n.t('discover_all_bots'),
+              klass: 'btn btn-primary btn-lg'
+        %>
+      </div>
+      <%= render 'what_is_a_bot' %>
+
+      <%= render 'providers_list' %>
+      <div class='button-bar text-center'>
+        <%= directory_link I18n.t('discover_all_bots'),
+              klass: 'btn btn-primary btn-lg'
+        %>
+      </div>
     </div>
 
     <sidebar class='col-md-4' >
-      <%= render 'what_is_a_bot' %>
+      <%= render 'presentation' %>
       <%= render partial: 'recently_added_bots' , locals:{title: I18n.t('homepage.recently_added_bots')}%>
     </sidebar>
   </div>
