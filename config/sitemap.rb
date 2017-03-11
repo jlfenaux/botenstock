@@ -3,7 +3,7 @@ require 'sitemap_generator'
 
 sitemaps_path = "sitemaps/"
 sitemaps_path += "dev/" if Rails.env == "development"
-SitemapGenerator::Sitemap.default_host = "http://botsforchatting.com"
+SitemapGenerator::Sitemap.default_host = "https://botsforchatting.com"
 SitemapGenerator::Sitemap.create_index = false
 SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/botenstock/"
 SitemapGenerator::Sitemap.sitemaps_path = sitemaps_path
