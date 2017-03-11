@@ -6,4 +6,8 @@ class HomepageController < ApplicationController
     @translated_links[:fr] = root_fr_path if I18n.locale != :fr
     set_meta_tags alternate: @translated_links
   end
+
+  def letsencrypt
+    render text: "#{params[:id]}.-second-part-of-string-random-characters"
+  end
 end
