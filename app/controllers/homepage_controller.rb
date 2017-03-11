@@ -8,6 +8,6 @@ class HomepageController < ApplicationController
   end
 
   def letsencrypt
-    render text: "#{params[:id]}.-second-part-of-string-random-characters"
+    render text: "#{params[:id]}.#{ENV['LETSENCRYPT']}"
   end
 end
