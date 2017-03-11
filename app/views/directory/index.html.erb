@@ -1,27 +1,24 @@
-
 <%= render 'search_box' %>
 <%= render 'layouts/messages' %>
 <!-- Page Content -->
 <div class="container">
     <!-- /.row -->
-    <div class="col-md-12">
-        <%= render 'sidebar' %>
-        <div class="col-md-9 no-padding"  id='list-top'>
-          <div class='index-header'>
-            <h1><%=@description%></h1>
-          </div>
+    <div class="col-sm-12">
+        <div class="col-sm-9 col-sm-push-3 no-padding"  id='list-top'>
+          <div class='index-header'><h1><%=@description%></h1></div>
 
           <%if @bots.length >0%>
             <%= render partial: 'bot', collection: @bots %>
           <%else%>
-          <div class='well'%>
-            <%=I18n.t('directory.no_bot')%>
-          </div>
+            <div class='well'%><%=I18n.t('directory.no_bot')%></div>
           <%end%>
 
           <div class='row clearfix col-sm-12 text-center'>
             <%= will_paginate @bots, params: {anchor: 'list-top'}, renderer: BootstrapPagination::Rails , inner_window: 0, outer_window: 0%>
           </div>
         </div>
+        <sidebar class="col-sm-3 col-sm-pull-9 sidebar">
+          <%= render 'sidebar' %>
+        </sidebar>
     </div>
 </div>
