@@ -27,6 +27,7 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'fog'
 gem 'newrelic_rpm'
+gem 'redis-rails'
 
 
 group :development, :test do

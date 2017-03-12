@@ -28,5 +28,6 @@ module Botenstock
 
     config.time_zone = "Paris"
     config.active_record.default_timezone = :utc
+    config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
   end
 end
