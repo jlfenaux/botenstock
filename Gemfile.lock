@@ -301,6 +301,7 @@ GEM
     minitest (5.10.1)
     multi_json (1.12.1)
     nenv (0.3.0)
+    newrelic_rpm (3.18.1.330)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
@@ -485,6 +486,7 @@ DEPENDENCIES
   launchy
   listen (~> 3.0.5)
   meta-tags
+  newrelic_rpm
   paperclip (~> 5.0.0)
   pg
   pg_search
@@ -515,4 +517,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.14.3
+   1.14.6

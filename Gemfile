@@ -26,6 +26,7 @@ gem 'rollbar'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'fog'
+gem 'newrelic_rpm'
 
 
 group :development, :test do
