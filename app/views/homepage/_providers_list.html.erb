@@ -1,4 +1,4 @@
-<% cache "provider_list_#{params[:locale]}" do %>
+<% cache "provider_list_#{params[:locale]}", expires_in: 30.minutes do %>
 <div class='row' style='margin-bottom: 40px' >
   <% Provider.visible.sorted.each do |provider|%>
     <div class='col-sm-6' style='height: 40px;'>

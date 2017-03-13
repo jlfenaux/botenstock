@@ -1,4 +1,4 @@
-<% cache "recently_added_bots_#{params[:locale]}" do %>
+<% cache "recently_added_bots_#{params[:locale]}", expires_in: 30.minutes do %>
 <div class= 'block'>
   <h4><%=title%></h4>
   <% Bot.ok.order('created_at desc').first(4).each do |bot|%>
