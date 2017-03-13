@@ -15,7 +15,6 @@
     <%= f.input :name %>
     <%= f.input :status,
         collection: Bot::STATUSES ,
-        label_method: ->(obj){ t("category.list.#{obj}") },
         input_html: { class: 'col-md-4' }
     %>
     <h3>Taglines</h3>
@@ -33,7 +32,7 @@
     <%= f.input :venture_beat_url , as: :url, placeholder: 'http://example.com'%>
     <%= f.input :categories,
         as: :check_boxes,
-        collection: Bot::CATEGORIES ,
+        collection: Bot::CATEGORIES.sort{|x,y| t("category.list.#{x}") <=> t("category.list.#{y}")} ,
         label_method: ->(obj){ t("category.list.#{obj}") },
         input_html: { class: 'col-md-4' }
     %>
@@ -47,7 +46,7 @@
     <%= f.input :logo, as: :file %>
 
   <h3><%=I18n.t('simple_form.labels.bot.platforms')%></h3>
-    <%= f.simple_fields_for :platforms do |p| %>
+    <%= f.simple_fields_for :platforms, f.object.platforms.joins(:provider).order('providers.name') do |p| %>
       <%= p.input :url, as: :url, label: p.object.provider.name,  placeholder: 'http://example.com'%>
       <%= p.hidden_field :provider_id%>
     <% end %>
