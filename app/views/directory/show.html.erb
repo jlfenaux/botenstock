@@ -14,7 +14,7 @@
           <h3><%=I18n.t("bot_page.present_on_platforms")%></h3>
           <div class='logos'>
             <% @bot.platforms.visible.each do |p| %>
-              <%= link_to image_tag(p.provider.icon.url(:thumb)), p.url, target:'_platform'%>
+              <%= link_to image_tag(p.provider.icon.url(:thumb)), p.dest_url, target:'_platform'%>
             <%end%>
           </div>
 

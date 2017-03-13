@@ -11,7 +11,14 @@
 class Platform < ApplicationRecord
   belongs_to :bot
   belongs_to :provider
-  validates :url, url: true, allow_blank: true
+  validates :url, url: true, allow_blank: true, unless:Proc.new { |a| a.provider.code == 'email' }
+  validates :url, email: true, allow_blank: true, if:Proc.new { |a| a.provider.code == 'email' }
+
 
   scope :visible, -> {joins(:provider).where('providers.visible = ?', true).order('providers.order asc').where("url is not null and url != ''")}
+
+  def dest_url
+    return "mailto:#{url}"if provider.code == 'email'
+    url
+  end
 end
