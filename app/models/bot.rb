@@ -89,7 +89,9 @@ class Bot < ApplicationRecord
   end
 
   def description
-    send("description_#{I18n.locale}")
+    content = send("description_#{I18n.locale}")
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown.render(content).html_safe
   end
 
   def self.migrate_languages
