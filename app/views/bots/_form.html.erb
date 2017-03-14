@@ -46,7 +46,7 @@
     <%= f.input :logo, as: :file %>
 
   <h3><%=I18n.t('simple_form.labels.bot.platforms')%></h3>
-    <%= f.simple_fields_for :platforms, f.object.platforms.joins(:provider).order('providers.name') do |p| %>
+    <%= f.simple_fields_for :platforms, f.object.platforms.sort_by{|p| p.provider_name} do |p| %>
       <%= p.input :url, as: :url, label: p.object.provider.name,  placeholder: 'http://example.com'%>
       <%= p.hidden_field :provider_id%>
     <% end %>

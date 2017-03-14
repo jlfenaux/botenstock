@@ -21,4 +21,7 @@ class Platform < ApplicationRecord
     return "mailto:#{url}"if provider.code == 'email'
     url
   end
+  def provider_name
+    provider.name
+  end
 end
