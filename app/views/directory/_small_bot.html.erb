@@ -1,0 +1,17 @@
+<a href="<%= bot_page_path(small_bot.permalink)%>" class='card col-md-12'>
+    <%= image_tag small_bot.logo.url(:thumb) ,width: '50px', class:'img-rounded', alt: small_bot.name%>
+    <div class='body'>
+      <h5 class="media-heading"><%= small_bot.name%></h5>
+      <div class='tagline'><%=small_bot.tagline%></div>
+      <% unless small_bot.categories.nil?%>
+        <%= small_bot.categories.map{|c|
+          "<span class='label label-default label-sm'>#{I18n.t("category.list.#{c}")}</span>"}.join(' ').html_safe %><br>
+      <%end%>
+      <% unless small_bot.platforms.empty?%>
+        <%= small_bot.platforms.visible.map{|p|
+          "<span class='label label-default label-sm'>#{p.provider.name}</span>"
+          }.join(' ').html_safe %><br>
+      <%end%>
+      </div>
+
+</a>

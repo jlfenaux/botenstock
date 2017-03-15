@@ -127,6 +127,7 @@ en:
     available_languages: Available in
     official_website: Official website
     our_opinion: Our take on the bot
+    related_bots: Related bots
   will_paginate:
     previous_label: "&#8592; "
     next_label: " &#8594;"

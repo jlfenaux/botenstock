@@ -7,7 +7,10 @@
 
       <div class='col-sm-9 col-sm-push-3 bot-presentation'>
           <h1><%= @bot.name %></h1>
-
+          <% unless @bot.categories.nil?%>
+            <%= @bot.categories.map{|c|
+              "<span class='label label-default'>#{I18n.t("category.list.#{c}")}</span>"}.join(' ').html_safe %><br>
+          <%end%>
           <p class='tagline'><%= @bot.tagline %></p>
           <p><%= @bot.description %></p>
 
@@ -36,6 +39,7 @@
             <%= link_to I18n.t('add_bot'), new_bot_path(), class:'btn btn-default' if current_user && current_user.has_role?(:admin) %>
             <%= link_to I18n.t('return'), :back, class:'btn btn-default' %>
           </div>
+
       </div>
 
       <sidebar class='col-sm-3 col-sm-pull-9 sidebar'>
@@ -69,6 +73,15 @@
                     klass: 'list-group-item'
                 %>
               <%end%>
+            </div>
+          </div>
+        <%end%>
+        <%= debug @bot.related_bots.any?%>
+        <% if @bot.related_bots.any?%>
+          <div class="panel panel-primary">
+            <div class="panel-heading"><%=I18n.t('bot_page.related_bots')%></div>
+            <div class='list-group'>
+              <%= render partial: 'small_bot',collection:  @bot.related_bots%>
             </div>
           </div>
         <%end%>

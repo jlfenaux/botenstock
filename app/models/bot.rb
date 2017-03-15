@@ -88,8 +88,18 @@ class Bot < ApplicationRecord
     send("tagline_#{I18n.locale}")
   end
 
+  def related_bots
+    bots = Bot.ok
+    categories.each do |cat|
+      bots = bots.where(" ? = ANY(categories)", cat)
+    end
+    bots = bots.where("id != ?", id)
+    bots.limit(5)
+  end
+
   def description
     content = send("description_#{I18n.locale}")
+    return '' if content.blank?
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
     markdown.render(content).html_safe
   end
