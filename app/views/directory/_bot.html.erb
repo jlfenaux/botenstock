@@ -4,7 +4,9 @@
       <h4 class="media-heading"><%= bot.name%></h4>
       <div class='tagline'><%=bot.tagline%></div>
       <% unless bot.categories.nil?%>
-        <%= bot.categories.map{|c| "<span class='label label-default'>#{I18n.t("category.list.#{c}")}</span>"}.join(' ').html_safe %><br>
+        <%= bot.categories.map{|c|
+          label = (c == params[:category]) ? 'label-secondary' : 'label-default'
+          "<span class='label #{label}'>#{I18n.t("category.list.#{c}")}</span>"}.join(' ').html_safe %><br>
       <%end%>
       <% unless bot.platforms.empty?%>
         <%= bot.platforms.visible.map{|p|
