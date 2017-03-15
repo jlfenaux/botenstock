@@ -76,12 +76,12 @@
             </div>
           </div>
         <%end%>
-        <%= debug @bot.related_bots.any?%>
-        <% if @bot.related_bots.any?%>
+        <% related = @bot.related_bots
+           if related.any?%>
           <div class="panel panel-primary">
             <div class="panel-heading"><%=I18n.t('bot_page.related_bots')%></div>
             <div class='list-group'>
-              <%= render partial: 'small_bot',collection:  @bot.related_bots%>
+              <%= render partial: 'small_bot',collection:  related%>
             </div>
           </div>
         <%end%>
