@@ -1,0 +1,6 @@
+  <row class='nav'>
+    <columns class='text-center'>
+        <%=image_tag('logo-header.png')%>
+    </columns>
+  </row>
+<spacer size="20"></spacer>

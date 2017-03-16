@@ -1,0 +1,16 @@
+<container>
+  <%= render 'nav'%>
+  <row>
+    <columns>
+      <p>Bonjour <%= @resource.email %>!</p>
+
+      <p>Votre compte a été bloqué. Quelqu'un a essayé de se connecter au site avec votre compte de nombreuses fois, sans fournir le bon mot de passe.</p>
+
+      <p>Cliquez sur le bouton ci-dessous pour débloquer votre compte:</p>
+
+      <center>
+        <button href="<%=unlock_url(@resource, unlock_token: @token)%>">Débloquer mon compte</button>
+      </center>
+    </columns>
+  </row>
+</container>

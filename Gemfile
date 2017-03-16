@@ -28,6 +28,10 @@ gem 'sitemap_generator'
 gem 'fog'
 gem 'newrelic_rpm'
 gem 'redis-rails'
+gem 'inky-rb', require: 'inky'
+# Stylesheet inlining for email **
+gem 'premailer-rails'
+gem "letter_opener", :group => :development
 
 
 group :development, :test do

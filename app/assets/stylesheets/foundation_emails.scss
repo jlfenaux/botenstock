@@ -1,0 +1,13 @@
+$primary-color: #7092BE;
+
+
+@import "foundation-emails";
+
+
+.nav {
+  background-color: $primary-color;
+  img {
+    margin-top: 10px;
+  }
+}
+
