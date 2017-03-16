@@ -13,23 +13,30 @@
 
     <%= f.error_notification %>
     <%= f.input :name %>
-    <%= f.input :status,
-        collection: Bot::STATUSES ,
-        input_html: { class: 'col-md-4' }
-    %>
+    <%if current_user.has_role?(:admin)%>
+        <%= f.input :status,
+            collection: Bot::STATUSES ,
+            input_html: { class: 'col-md-4' }
+        %>
+
     <h3>Taglines</h3>
     <%= f.input :tagline_en %>
     <%= f.input :tagline_fr %>
     <h3>Descriptions</h3>
     <%= f.input :description_en, input_html: {rows: 5 }%>
     <%= f.input :description_fr, input_html: {rows: 5 } %>
-    <h3>Test</h3>
-    <%= f.input :test_en, input_html: {rows: 5 }%>
-    <%= f.input :test_fr, input_html: {rows: 5 } %>
-    <%= f.input :tested_on, as: :date, html5: true, wrapper: :horizontal_form%>
+
+        <h3>Test</h3>
+            <%= f.input :test_en, input_html: {rows: 5 }%>
+            <%= f.input :test_fr, input_html: {rows: 5 } %>
+            <%= f.input :tested_on, as: :date, html5: true, wrapper: :horizontal_form%>
+    <%end%>
     <%= f.input :website , as: :url, placeholder: 'http://example.com'%>
-    <%= f.input :product_hunt_url , as: :url, placeholder: 'http://example.com'%>
-    <%= f.input :venture_beat_url , as: :url, placeholder: 'http://example.com'%>
+
+    <%if current_user.has_role?(:admin)%>
+        <%= f.input :product_hunt_url , as: :url, placeholder: 'http://example.com'%>
+        <%= f.input :venture_beat_url , as: :url, placeholder: 'http://example.com'%>
+    <%end%>
     <%= f.input :categories,
         as: :check_boxes,
         collection: Bot::CATEGORIES.sort{|x,y| t("category.list.#{x}") <=> t("category.list.#{y}")} ,
@@ -43,12 +50,15 @@
     %>
     <%= f.input :twitter %>
     <%= f.input :facebook %>
+    <%if current_user.has_role?(:admin)%>
     <%= f.input :logo, as: :file %>
-
+    <%end%>
   <h3><%=I18n.t('simple_form.labels.bot.platforms')%></h3>
     <%= f.simple_fields_for :platforms, f.object.platforms.sort_by{|p| p.provider_name} do |p| %>
       <%= p.input :url, as: :url, label: p.object.provider.name,  placeholder: 'http://example.com'%>
       <%= p.hidden_field :provider_id%>
     <% end %>
+    <hr>
+    <%= f.input :comments, input_html: {rows: 5 } %>
     <%= render 'button_bar', f: f %>
 <% end %>

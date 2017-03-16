@@ -27,6 +27,7 @@ fr:
         platforms: Plateformes
         created_at: Créé le
         updated_at: dernière MAJ
+        comments: Commentaires à destination de Bots for Chatting
       provider:
         name: Nom
         description_fr: En français
@@ -41,7 +42,8 @@ fr:
   default_title: Tous les bots, sur toutes les plateformes
   access_not_granted: Désolé, mais vous n'êtes pas autorisé à accéder à cette page.
   discover_all_bots: Découvrez tous les bots
-  add_bot: Soumettre un bot
+  add_bot: Ajouter un bot
+  submit_bot: Soumettre votre bot
   add_post: Ajouter un article
   add_provider: Ajouter une nouvelle plateforme
   char_min: caractères minimum
@@ -111,6 +113,7 @@ fr:
     official_website: Site web Officiel
     our_opinion: Notre avis sur le bot
     related_bots: Bots similaires
+    bot_still_pending: Merci. Nous allons rapidement vérifier ce bot avant de l'inclure dans l'annuaire.
   directory:
     no_bot: Aucun bot ne correspond à vos critères.
   contact:

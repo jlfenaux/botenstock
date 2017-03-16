@@ -47,6 +47,7 @@ en:
         platforms: Platforms
         created_at: Created
         updated_at: Last update
+        comments: Comments for Bots for Chatting
       provider:
         name: Name
         description_fr: in French
@@ -60,6 +61,7 @@ en:
   access_not_granted: Sorry, you are not allowed to access that page.
   discover_all_bots: Let's discover the bots
   add_bot: Add a new bot
+  submit_bot: Submit your bot
   add_post: Add a post
   add_provider: Add a new platform
   char_min: characters minimum
@@ -129,6 +131,7 @@ en:
     official_website: Official website
     our_opinion: Our take on the bot
     related_bots: Related bots
+    bot_still_pending: Thank you for your submission. We'll soon check this bot before adding it to the directory.
   will_paginate:
     previous_label: "&#8592; "
     next_label: " &#8594;"

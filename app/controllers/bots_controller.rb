@@ -1,6 +1,6 @@
 class BotsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_if_admin
+  before_action :check_if_admin, only: [:index, :destroy]
   before_action :set_bot, only: [:show, :edit, :update, :destroy]
   layout "admin"
 
@@ -29,8 +29,12 @@ class BotsController < ApplicationController
   # GET /bots/new
   def new
     @bot = Bot.new
-    @bot.status = 'ok' if current_user.has_role?('admin')
+    @bot.status = current_user.has_role?('admin') ? 'ok' : 'pending'
     add_platforms
+    @translated_links = {}
+    @translated_links[:en] = new_bot_en_path if I18n.locale != :en
+    @translated_links[:fr] = new_bot_fr_path if I18n.locale != :fr
+
   end
 
   # GET /bots/1/edit
@@ -100,6 +104,7 @@ class BotsController < ApplicationController
         :facebook,
         :tagline_en,
         :tagline_fr,
+        :comments,
         :product_hunt_url,
         :venture_beat_url,
         categories: [],

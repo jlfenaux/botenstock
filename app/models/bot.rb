@@ -45,7 +45,7 @@ class Bot < ApplicationRecord
   pg_search_scope :search_for, against: %i(name description_en tagline_en description_fr tagline_fr)
   scope :ok, -> { where(status: 'ok')}
 
-  STATUSES = ['ok', 'pending', 'to_be_checked', 'deleted']
+  STATUSES = ['ok', 'pending', 'deleted']
 
   CATEGORIES = [
     'Actualités',
@@ -73,7 +73,7 @@ class Bot < ApplicationRecord
     'Utilitaires',
     'Voyage'
   ]
-  LANGUAGES = ['Anglais', 'Français']
+
   LANGUAGES = ['en', 'fr']
 
   def platform_url(platform)
