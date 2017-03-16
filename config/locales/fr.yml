@@ -72,6 +72,8 @@ fr:
     list:
       en: Anglais
       fr: Français
+  status:
+    all: Tous les  statuts
   platform:
     one: plateforme
     other: plateformes

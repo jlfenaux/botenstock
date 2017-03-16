@@ -89,6 +89,8 @@ en:
     list:
       en: English
       fr: French
+  status:
+    all: All statuses
   platform:
     one: platform
     other: platforms

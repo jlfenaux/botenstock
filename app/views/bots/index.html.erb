@@ -1,14 +1,17 @@
 <h1><%= pluralize @bots.total_entries, 'bot'%> </h1>
-<div class='col-sm-3'>
+<div class='col-sm-2'>
   <%= select_tag :category, options_for_select(Bot::CATEGORIES, params[:category], ),  class: 'form-control input-sm', id:'bots-category',include_blank: I18n.t('category.all')%>
 </div>
-<div class='col-sm-3'>
+<div class='col-sm-2'>
   <%= select_tag :platform,
       options_for_select(
         Provider.all.map{|p| [p.name, p.id]},
         params[:platform]
       ),
       class: 'form-control input-sm', id:'bots-platform',include_blank: I18n.t('platform.all')%>
+</div>
+<div class='col-sm-2'>
+  <%= select_tag :status, options_for_select(Bot::STATUSES, params[:status], ),  class: 'form-control input-sm', id:'bots-status',include_blank: I18n.t('status.all')%>
 </div>
 <div class='col-sm-6'>
 <%= text_field_tag :keywords, params[:keywords], id:'bots-keywords', placeholder:I18n.t('search')+'...', class:'form-control input-sm'%>
@@ -20,6 +23,7 @@
       <th><%=I18n.t('simple_form.labels.bot.name')%></th>
       <th><%=I18n.t('simple_form.labels.bot.created_at')%></th>
       <th><%=I18n.t('simple_form.labels.bot.updated_at')%></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +33,7 @@
         <td><%=link_to bot.name, edit_bot_path(bot) %></td>
         <td><%=I18n.l bot.created_at, format: :long%></td>
         <td><%=I18n.l bot.updated_at, format: :long%></td>
+        <td><%=bot.status%></td>
       </tr>
     <%end%>
   </tbody>

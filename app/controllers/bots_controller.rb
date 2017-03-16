@@ -12,6 +12,7 @@ class BotsController < ApplicationController
   # GET /bots.json
   def index
     @bots = Bot.all
+    @bots = @bots.where(status: params[:status]) unless params[:status].blank?
     @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless params[:category].blank?
     @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", params[:platform].to_i) unless params[:platform].blank?
     @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless params[:language].blank?
