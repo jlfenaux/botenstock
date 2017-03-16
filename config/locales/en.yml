@@ -62,6 +62,7 @@ en:
   add_bot: Add a new bot
   add_post: Add a post
   add_provider: Add a new platform
+  char_min: characters minimum
   return: Return
   edit: Edit
   save: Save

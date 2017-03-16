@@ -44,6 +44,7 @@ fr:
   add_bot: Soumettre un bot
   add_post: Ajouter un article
   add_provider: Ajouter une nouvelle plateforme
+  char_min: caractères minimum
   return: Retour
   edit: Editer
   save: Enregistrer
