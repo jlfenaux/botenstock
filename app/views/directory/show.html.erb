@@ -29,6 +29,15 @@
             <%= @bot.send("test_#{I18n.locale}")%>
           <%end%>
 
+          <% related = @bot.related_bots
+          if related.any?%>
+            <h3><%=I18n.t('bot_page.related_bots')%></h3>
+            <div class='list-group'>
+              <%= render partial: 'small_bot',collection:  related%>
+            </div>
+
+          <%end%>
+
           <% if current_user && current_user.has_role?(:admin)%>
             <p>
               <strong>Date de création:</strong> <%= I18n.l @bot.created_at.to_date%><br>
@@ -76,15 +85,6 @@
                     klass: 'list-group-item'
                 %>
               <%end%>
-            </div>
-          </div>
-        <%end%>
-        <% related = @bot.related_bots
-           if related.any?%>
-          <div class="panel panel-primary">
-            <div class="panel-heading"><%=I18n.t('bot_page.related_bots')%></div>
-            <div class='list-group'>
-              <%= render partial: 'small_bot',collection:  related%>
             </div>
           </div>
         <%end%>
