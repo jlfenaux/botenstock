@@ -33,7 +33,7 @@
           if related.any?%>
             <h3><%=I18n.t('bot_page.related_bots')%></h3>
             <div class='list-group'>
-              <%= render partial: 'small_bot',collection:  related%>
+              <%= render partial: 'bot',collection:  related%>
             </div>
 
           <%end%>
