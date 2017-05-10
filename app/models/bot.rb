@@ -129,8 +129,8 @@ class Bot < ApplicationRecord
     # PLATFORMS.each do |platform|
     #    self.platforms << platform unless platform_url(platform).blank?
     # end
-    self.languages = self.languages.delete_if{|l| l.blank?}
-    self.categories = self.categories.delete_if{|l| l.blank?}
+    self.languages = self.languages.delete_if{|l| l.blank?} if self.languages
+    self.categories = self.categories.delete_if{|l| l.blank?} if self.categories
   end
 
 
