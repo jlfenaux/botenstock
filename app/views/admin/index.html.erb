@@ -1,11 +1,11 @@
 <h1>Statistiques</h1>
 <h2>Création de bots sur le mois dernier</h2>
 
-<%= line_chart Bot.ok.where("created_at >? ", Date.today - 1.month).group_by_day(:created_at).count %>
+<%= line_chart Bot.where("created_at >? ", Date.today - 1.month).group_by_day(:created_at).count %>
 
 <h2>Création de bots par mois</h2>
 
-<%= line_chart Bot.ok.group_by_month(:created_at).count %>
+<%= line_chart Bot.group_by_month(:created_at).count %>
 
 <h2>Plateformes</h2>
 <%= pie_chart Platform.where("url is not null and url != ''").joins(:provider).group('providers.name').count%>
