@@ -137,7 +137,7 @@ class Bot < ApplicationRecord
   end
 
   def check_status_change
-    status_changed = self.changes.fetch("status")
+    status_changed = self.changes.fetch("status"){nil}
     if status_changed && status_changed[1] == 'ok'
       self.created_at = Time.now
     end
