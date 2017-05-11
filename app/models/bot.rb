@@ -35,6 +35,7 @@ class Bot < ApplicationRecord
   validates_presence_of :permalink
   validates_presence_of :name
   before_validation :create_permalink
+  before_save :check_status_change
 
   has_attached_file :logo,
     styles: { medium: "300x300>", thumb: "100x100>" },
@@ -45,6 +46,8 @@ class Bot < ApplicationRecord
   include PgSearch
   pg_search_scope :search_for, against: %i(name description_en tagline_en description_fr tagline_fr)
   scope :ok, -> { where(status: 'ok')}
+
+
 
   STATUSES = ['ok', 'pending', 'discarded', 'incomplete']
 
@@ -133,5 +136,11 @@ class Bot < ApplicationRecord
     self.categories = self.categories.delete_if{|l| l.blank?} if self.categories
   end
 
+  def check_status_change
+    status_changed = self.changes.fetch("status")
+    if status_changed && status_changed[1] == 'ok'
+      self.created_at = Time.now
+    end
+  end
 
 end
