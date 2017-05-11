@@ -28,6 +28,7 @@ gem 'sitemap_generator'
 gem 'fog'
 gem 'newrelic_rpm'
 gem 'redis-rails'
+gem "bootstrap-table-rails"
 gem 'inky-rb', require: 'inky'
 # Stylesheet inlining for email **
 gem 'premailer-rails'

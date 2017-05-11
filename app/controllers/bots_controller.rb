@@ -1,3 +1,5 @@
+require 'bootstrap_table.rb'
+
 class BotsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_if_admin, only: [:index, :destroy]
@@ -11,14 +13,28 @@ class BotsController < ApplicationController
   # GET /bots
   # GET /bots.json
   def index
-    @bots = Bot.all
-    @bots = @bots.where(status: params[:status]) unless params[:status].blank?
-    @bots = @bots.where(" ? = ANY(categories)", params[:category]) unless params[:category].blank?
-    @bots = @bots.joins(:platforms).where("platforms.provider_id = ?", params[:platform].to_i) unless params[:platform].blank?
-    @bots = @bots.where(" ? = ANY(languages)", params[:language]) unless params[:language].blank?
-    @bots = @bots.search_for(params[:keywords]) unless params[:keywords].blank?
-    @bots = @bots.includes(platforms: :provider)
-    @bots = @bots.order(:name).paginate(:page => params[:page], :per_page => 20)
+    respond_to do |format|
+      format.html
+      format.json {
+        bots = Bot.all
+        bots = bots.where(status: params[:status]) unless params[:status].blank?
+        bots = bots.where(" ? = ANY(categories)", params[:category]) unless params[:category].blank?
+        bots = bots.joins(:platforms).where("platforms.provider_id = ?", params[:platform].to_i) unless params[:platform].blank?
+        bots = bots.where(" ? = ANY(languages)", params[:language]) unless params[:language].blank?
+        bots = bots.search_for(params[:search]) unless params[:search].blank?
+        bots = bots.includes(platforms: :provider)
+        if params[:sort] && params[:order]
+          bots = bots.order("#{params[:sort]} #{params[:order]}")
+        else
+          bots = bots.order('name asc')
+        end
+        render json: BootstrapTable.
+                      new(bots.to_sql).
+                      json( start: params[:offset].to_i,
+                            per_page: params[:limit].to_i
+                      )
+      }
+    end
   end
 
   # GET /bots/1
