@@ -14,9 +14,8 @@ $(document).ready =>
           unless value == undefined || value == null || value == ''
             params.data[criteria] = value
         $.ajax(params).done((data) =>
-          console.log 'fini', data
-          if data.total == 0
-            $table.bootstrapTable('removeAll')
+          $table.bootstrapTable('removeAll') if data.total == 0
+          $('#bot_number').html("#{data.total} ")
         )
       columns: [
         {
