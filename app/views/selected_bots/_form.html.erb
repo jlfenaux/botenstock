@@ -15,6 +15,6 @@
     </div>
 
     <%= f.association :bot, collection: Bot.order(:name)%>
-    <%= f.input :start_date, as: :datetime, html5: true %>
-    <%= f.input :end_date, as: :datetime, html5: true %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
 <% end %>

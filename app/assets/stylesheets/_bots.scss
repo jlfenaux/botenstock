@@ -20,6 +20,24 @@
       padding-left: 20px;
     }
   }
+  div.date {
+    width: 100%;
+    display: inline-block;
+  }
+  label.date {
+
+    width: 25%;
+    text-align: right;
+    display: inline-block;
+  }
+  .date {
+    div.form-inline {
+      width: 75%;
+      display: inline-block;
+      padding-left: 20px;
+    }
+  }
+
 }
 
 .label-secondary {

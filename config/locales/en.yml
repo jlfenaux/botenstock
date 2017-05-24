@@ -54,6 +54,9 @@ en:
         description_en: in English
         website_url: Website
         directory_url: Official Bot Directory
+      selected_bot:
+        start_date: Start Date
+        end_date: End Date
   routes:
     bots: bots
     providers: platforms
@@ -148,3 +151,10 @@ en:
     objects:
       1: Submit a new bot
       2: Other
+  activerecord:
+    errors:
+      models:
+        selected_bot:
+          attributes:
+            end_date:
+              wrong: "The end date has to be posterior to the start date"
