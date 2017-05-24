@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     devise_for :users
     get 'bot/:permalink' => 'directory#show', as: 'bot_page'
     resources :photos, only: [:index, :create, :destroy]
+    resources :selected_bots
     get 'directory/:platform/:category/:language/(:keywords)' => 'directory#index', as: 'directory'
     resources :providers, :bots, :posts
     resources :contacts do

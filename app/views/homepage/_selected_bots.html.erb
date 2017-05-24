@@ -1,0 +1,16 @@
+<% #cache "selected_bots_#{params[:locale]}", expires_in: 30.minutes do %>
+<div class= 'block'>
+  <h4><%=title%></h4>
+  <% SelectedBot.draw.each do |bot|%>
+    <div class="media">
+      <a href="<%= bot_page_path(bot.permalink)%>" class='media-left pull-left'>
+        <%= image_tag bot.logo.url(:thumb) , class:'media-object', alt: bot.name%>
+      </a>
+      <div class="media-body">
+        <h5 class="media-heading"><%=bot.name%></h5>
+        <%=bot.tagline%>
+      </div>
+    </div>
+  <%end%>
+</div>
+<%#end%>

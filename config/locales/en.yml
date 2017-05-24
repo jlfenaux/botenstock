@@ -75,6 +75,7 @@ en:
   search_placeholder: Search for...
   homepage:
     recently_added_bots: Recenty added bots
+    selected_bots: Featured bots
   post:
     one: post
     other: posts

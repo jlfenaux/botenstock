@@ -57,6 +57,7 @@ fr:
   search_placeholder: Rechercher...
   homepage:
     recently_added_bots: Bots récemment ajoutés
+    selected_bots: A la Une
 
   post:
     one: article

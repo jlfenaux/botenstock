@@ -12,12 +12,11 @@
       </div>
       <div class='clearfix'></div>
       <%= render 'what_is_a_bot' %>
-
       <%= render 'providers_list' %>
-
     </div>
 
     <sidebar class='col-md-4' >
+      <%= render partial: 'selected_bots', locals:{title: I18n.t('homepage.selected_bots')} %>
       <%= render 'presentation' %>
       <%= render partial: 'recently_added_bots' , locals:{title: I18n.t('homepage.recently_added_bots')}%>
     </sidebar>
