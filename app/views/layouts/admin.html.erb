@@ -11,46 +11,48 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header>
+    <nav>
       <%= render 'layouts/navigation' %>
-    </header>
-    <div class='admin-container'>
-      <div class='sidebar col-md-2'>
-        <a href="<%=admin_path()%>">
-          Statistiques
-        </a>
+    </nav>
+    <div class='container-fluid'>
+      <div class='admin-container row'>
+        <div class='sidebar col-md-2'>
+          <a href="<%=admin_path()%>">
+            Statistiques
+          </a>
 
-        <a href="<%=providers_path()%>">
-          <%= I18n.t('provider', count: 2).titlecase %>
-          <span class="badge"><%=Provider.count%></span>
-        </a>
-        <a href="<%=bots_path()%>">
-          Bots
-          <span class="badge"><%=Bot.count%></span>
-        </a>
-        <a href="<%=posts_path()%>">
-          <%= I18n.t('post', count: Post.count).titlecase %>
-          <span class="badge"><%=Post.count%></span>
-        </a>
-        <a href="<%=photos_path()%>">
-          Photos
-          <span class="badge"><%=Photo.count%></span>
-        </a>
-        <a href="<%=contacts_path()%>">
-          Contacts
-          <span class="badge"><%=Contact.pending.count%></span>
-        </a>
-        <a href="<%=selected_bots_path()%>">
-          Selected bots
-          <span class="badge"><%=SelectedBot.count%></span>
-        </a>
+          <a href="<%=providers_path()%>">
+            <%= I18n.t('provider', count: 2).titlecase %>
+            <span class="badge"><%=Provider.count%></span>
+          </a>
+          <a href="<%=bots_path()%>">
+            Bots
+            <span class="badge"><%=Bot.count%></span>
+          </a>
+          <a href="<%=posts_path()%>">
+            <%= I18n.t('post', count: Post.count).titlecase %>
+            <span class="badge"><%=Post.count%></span>
+          </a>
+          <a href="<%=photos_path()%>">
+            Photos
+            <span class="badge"><%=Photo.count%></span>
+          </a>
+          <a href="<%=contacts_path()%>">
+            Contacts
+            <span class="badge"><%=Contact.pending.count%></span>
+          </a>
+          <a href="<%=selected_bots_path()%>">
+            Selected bots
+            <span class="badge"><%=SelectedBot.count%></span>
+          </a>
 
-        <a href="<%=logos_path()%>">
-          Logos
-        </a>
-      </div>
-      <div class='col-md-10'>
-        <%= yield %>
+          <a href="<%=logos_path()%>">
+            Logos
+          </a>
+        </div>
+        <div class='col-md-10'>
+          <%= yield %>
+        </div>
       </div>
     </div>
   </body>
