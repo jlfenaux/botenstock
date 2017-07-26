@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     get 'logos' => 'bots#logos'
     post 'posts/preview' => 'posts#preview', as: 'post_preview'
     get 'admin' => "admin#index", as: 'admin'
+    get 'admin/update_bots' => "admin#update_bots"
+    post 'admin/manage_bots' => "admin#manage_bots"
     get 'blog/:permalink' => 'blog#show', as: 'blog_article'
     get 'blog' => 'blog#index', as: 'blog'
     root to: 'homepage#index'

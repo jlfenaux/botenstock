@@ -1,0 +1,10 @@
+<%= @categories.to_a.to_s%>
+
+<table class='table table-default'>
+<% @results.each do |result|%>
+<tr>
+<td><%=result[:name]%></td>
+<td><%=result[:status]%></td>
+</tr>
+<%end%>
+</table>
