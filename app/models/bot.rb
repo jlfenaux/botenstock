@@ -31,9 +31,8 @@
 class Bot < ApplicationRecord
   has_many :platforms
   accepts_nested_attributes_for :platforms , allow_destroy: true, reject_if: proc { |attributes| attributes['url'].blank? || attributes['provider_id'].nil?}
-  validates_uniqueness_of :permalink
-  validates_presence_of :permalink
-  validates_presence_of :name
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :permalink, presence: true, uniqueness: true
   before_validation :create_permalink
   before_save :check_status_change
 
